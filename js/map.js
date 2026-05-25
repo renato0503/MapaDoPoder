@@ -248,7 +248,7 @@ function handleClick(event, d) {
   const uf = d.properties.sigla || d.properties.UF;
   const nomeEstado = d.properties.nome || d.properties.name || uf;
   
-  window.dispatchEvent(new CustomEvent('familiaSelected', {
+window.dispatchEvent(new CustomEvent('familiaSelected', {
     detail: {
       uf,
       nomeEstado,
