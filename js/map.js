@@ -67,9 +67,140 @@ export async function initBrazilMap() {
     .attr('class', 'state-label')
     .text((d) => d.properties.sigla || d.properties.UF || '');
 
+  renderGovernadorMarkers(svg, geoData, governadoresMap, path);
+  renderEmpresaOrbits(svg, geoData, clansMap, governadoresMap, path);
+
   window.dispatchEvent(new CustomEvent('mapLoaded', {
     detail: { familiasData }
   }));
+}
+
+function renderGovernadorMarkers(svg, geoData, governadoresMap, path) {
+  const markersGroup = svg.append('g').attr('class', 'governadores-layer');
+  
+  geoData.features.forEach(d => {
+    const uf = d.properties.sigla || d.properties.UF;
+    const gov = governadoresMap[uf];
+    if (!gov) return;
+    
+    const centroid = path.centroid(d);
+    const x = centroid[0];
+    const y = centroid[1];
+    
+    const marker = markersGroup.append('g')
+      .attr('class', 'governador-marker')
+      .attr('transform', `translate(${x}, ${y})`)
+      .attr('data-uf', uf)
+      .on('click', (event) => {
+        event.stopPropagation();
+        const nomeEstado = d.properties.nome || d.properties.name || uf;
+        window.dispatchEvent(new CustomEvent('familiaSelected', {
+          detail: {
+            uf,
+            nomeEstado,
+            grupos: window.clansMap?.[uf] || [],
+            gobernador: window.governadoresMap?.[uf] || null
+          }
+        }));
+      });
+    
+    marker.append('circle')
+      .attr('r', 12)
+      .attr('cx', 0)
+      .attr('cy', 0);
+    
+    marker.append('text')
+      .attr('x', 0)
+      .attr('y', 3)
+      .text(gov.partido.substring(0, 3));
+    
+    marker.append('title')
+      .text(`Gov ${gov.nome} (${gov.partido})`);
+  });
+}
+
+function renderEmpresaOrbits(svg, geoData, clansMap, governadoresMap, path) {
+  const orbitsGroup = svg.append('g').attr('class', 'empresas-layer');
+  const tooltip = d3.select('#map-container').append('div')
+    .attr('class', 'empresa-tooltip')
+    .style('display', 'none');
+  
+  const empresasMap = new Map();
+  
+  Object.entries(clansMap).forEach(([uf, grupos]) => {
+    grupos.forEach(g => {
+      if (g.empresas_relacionadas && g.empresas_relacionadas.length > 0) {
+        g.empresas_relacionadas.forEach(emp => {
+          if (!empresasMap.has(emp.nome)) {
+            empresasMap.set(emp.nome, { ...emp, uf: uf, familia: g.familia });
+          }
+        });
+      }
+    });
+  });
+  
+  Object.entries(governadoresMap).forEach(([uf, gov]) => {
+    if (gov.empresas_relacionadas && gov.empresas_relacionadas.length > 0) {
+      gov.empresas_relacionadas.forEach(emp => {
+        if (!empresasMap.has(emp.nome + '_gov')) {
+          empresasMap.set(emp.nome + '_gov', { ...emp, uf: uf, familia: 'Governador' });
+        }
+      });
+    }
+  });
+  
+  const empresas = Array.from(empresasMap.values()).slice(0, 60);
+  
+  geoData.features.forEach(d => {
+    const uf = d.properties.sigla || d.properties.UF;
+    const centroid = path.centroid(d);
+    const baseX = centroid[0];
+    const baseY = centroid[1];
+    
+    const stateEmpresas = empresas.filter(e => e.uf === uf);
+    
+    stateEmpresas.forEach((emp, i) => {
+      const angle = (2 * Math.PI * i) / stateEmpresas.length;
+      const radius = 22;
+      const x = baseX + radius * Math.cos(angle);
+      const y = baseY + radius * Math.sin(angle);
+      
+      const classe = emp.legalidade.toLowerCase().replace(/[^a-z]/g, '') || 'investigada';
+      
+      const empresaGroup = orbitsGroup.append('g')
+        .attr('class', `empresa-orbit ${classe}`)
+        .attr('transform', `translate(${x}, ${y})`);
+      
+      empresaGroup.append('line')
+        .attr('x1', baseX - x)
+        .attr('y1', baseY - y)
+        .attr('x2', 0)
+        .attr('y2', 0);
+      
+      empresaGroup.append('circle')
+        .attr('r', emp.legalidade === 'Ilícita' ? 5 : 4)
+        .attr('cx', 0)
+        .attr('cy', 0);
+      
+      empresaGroup.on('mouseover', (event) => {
+        tooltip.style('display', 'block')
+          .html(`
+            <div class="emp-nome">${emp.nome}</div>
+            <div class="emp-tipo">${emp.tipo || ''}</div>
+            <div style="opacity: 0.7; margin-top: 4px;">${emp.relacao || ''}</div>
+            <span class="emp-tag" style="background: ${emp.legalidade === 'Lícita' ? '#10b981' : emp.legalidade === 'Investigada' ? '#f59e0b' : '#ef4444'}">${emp.legalidade}</span>
+          `);
+      })
+      .on('mousemove', (event) => {
+        const containerRect = document.getElementById('map-container').getBoundingClientRect();
+        tooltip.style('left', (event.clientX - containerRect.left + 15) + 'px')
+          .style('top', (event.clientY - containerRect.top - 10) + 'px');
+      })
+      .on('mouseout', () => {
+        tooltip.style('display', 'none');
+      });
+    });
+  });
 }
 
 function handleHover(event, d) {
