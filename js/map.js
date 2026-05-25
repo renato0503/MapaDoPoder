@@ -15,12 +15,13 @@ const partyColors = {
   'PSD': '#f6b026',
   'PP': '#f97316',
   'PROS': '#ff8c00',
-  'MDB': '#cc4400',
   'Cidadania': '#ffaa00',
+  'PSDB': '#0085c8',
   
   'PL': '#0055a4',
   'UNIÃO': '#1e3a5f',
-  'Republicans': '#003366',
+  'REP': '#003366',
+  'Republicanos': '#003366',
   'PSL': '#1f4962',
   'DEM': '#2e7eb9',
   'NOVO': '#1e4d8c',
@@ -28,8 +29,7 @@ const partyColors = {
   'Patriota': '#0d2b4a',
   'DC': '#1a4a7a',
   'Avante': '#2a5a8a',
-  'PMN': '#cc9900',
-  'PROS': '#0066a2'
+  'PMN': '#cc9900'
 };
 
 function getPartyColor(partido) {
