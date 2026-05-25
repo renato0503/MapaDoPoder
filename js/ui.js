@@ -138,7 +138,7 @@ function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
   familiaCuriosidades.textContent = destaque.curiosidades;
   
   renderFamilyPhotos(destaque.membros, destaque.familia);
-  renderGovernadorInfo(governador);
+  renderGovernadorInfo(gobernador);
   renderEmpresas(destaque.empresas_relacionadas || []);
   
   if (grupos.length > 1) {
