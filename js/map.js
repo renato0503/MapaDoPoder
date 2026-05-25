@@ -108,7 +108,7 @@ export async function initBrazilMap() {
     .text((d) => d.properties.sigla || d.properties.UF || '');
 
   // renderGovernadorMarkers(svg, geoData, governadoresMap, path);
-  renderEmpresaOrbits(svg, geoData, clansMap, governadoresMap, path);
+  // renderEmpresaOrbits(svg, geoData, clansMap, governadoresMap, path);
 
   window.dispatchEvent(new CustomEvent('mapLoaded', {
     detail: { familiasData }

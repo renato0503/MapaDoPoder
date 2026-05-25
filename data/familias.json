@@ -1986,16 +1986,19 @@
       "partido_governador": "UNIÃO",
       "relacao_governador": "Membro da família",
       "membros": [
+        "Mauro Mendes",
         "Pedro Taques"
       ],
       "cargos": [
         "Governador",
-        "Senador"
+        "Senador",
+        "Prefeito"
       ],
       "ancoras_poder": [
-        "Base política regional"
+        "Base política regional",
+        "Sistema Centro-Oeste de Comunicação"
       ],
-      "curiosidades": "Pedro Taques exerceu mandatos de administrador estadual e senator por Mato Grosso.",
+      "curiosidades": "Mauro Mendes é o atual governador de MT. Pedro Taques foi senador e ex-secretário.",
       "cor_hex": "#CD853F",
       "empresas_relacionadas": [
         {

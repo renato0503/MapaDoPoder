@@ -131,7 +131,7 @@ function atualizarPainel({ uf, nomeEstado, grupos, gov }) {
   const destaque = grupos.find(g => g.destaque) || grupos[0];
   
   const partidoCor = gov ? getPartyColor(gov.partido) : destaque.cor_hex;
-  familiaNome.textContent = gov ? `${gov.nome}` : destaque.familia;
+  familiaNome.textContent = destaque.familia;
   familiaPeriodo.textContent = destaque.periodo || '';
   familiaCor.style.backgroundColor = partidoCor;
   familiaMembros.innerHTML = destaque.membros?.map(m => `<li>${m}</li>`).join('') || '<li>Sem dados</li>';
@@ -168,6 +168,7 @@ function atualizarPainel({ uf, nomeEstado, grupos, gov }) {
           familiaAncoras.innerHTML = selectedClan.ancoras_poder?.map(a => `<span class="anchor-tag">${a}</span>`).join('') || '';
           familiaCuriosidades.textContent = selectedClan.curiosidades || '';
           renderFamilyPhotos(selectedClan.membros || [], selectedClan.familia || '');
+          renderGovernadorInfo(gov);
           const clanEmpresas = [
             ...(selectedClan.empresas_relacionadas || []),
             ...(gov?.empresas_relacionadas || [])
