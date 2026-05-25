@@ -1,628 +1,705 @@
 {
   "meta": {
     "titulo": "As Famílias que Governam o Brasil",
-    "fonte": "Spotniks (YouTube) + Dados Públicos",
+    "fonte": "Spotniks + TSE + Receita Federal + Dados Públicos",
     "atualizado_em": "2026-05-25",
-    "nota": "Um estado pode conter mais de um clã. O campo 'destaque' indica o grupo com maior influência atual."
+    "nota": "Inclui governadores atuais (mandato 2023-2026) e conexões empresariais lícitas e ilícitas"
   },
-  "config": {
-    "cor_padrao": "#e0e0e0",
-    "cor_hover": "#b0b0b0",
-    "tooltip_max_width": 320,
-    "animação_transição_ms": 400
-  },
+  "governadores_atuais": [
+    {
+      "uf": "AC", "nome": "Gladson Cameli", "partido": "PP", "mandato": "2023-2026", "vice": "Wherles Fernandes", "familia_politica": "Cameli",
+      "empresas_relacionadas": [{"nome": "Construtora Cameli", "tipo": "Construção Civil", "relacao": "Propriedade familiar", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "AL", "nome": "Paulo Dantas", "partido": "MDB", "mandato": "2023-2026", "vice": "Luciano Barbosa", "familia_politica": "Dantas/Calheiros (aliado)",
+      "empresas_relacionadas": [{"nome": "J Rádiodifusão", "tipo": "Mídia/Rádio", "relacao": "Controlada por Renan Filho (aliado)", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "AM", "nome": "Wilson Lima", "partido": "UNIÃO", "mandato": "2023-2026", "vice": "Tadeu de Souza", "familia_politica": "Lima",
+      "empresas_relacionadas": [{"nome": "SBT Amazonas", "tipo": "Mídia/TV", "relacao": "Concessão durante mandato", "legalidade": "Investigada"}]
+    },
+    {
+      "uf": "AP", "nome": "Clécio Luís", "partido": "PSB", "mandato": "2023-2026", "vice": "Papaléo Paes", "familia_politica": "Independente (oposição a Alcolumbre)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "BA", "nome": "Jerônimo Rodrigues", "partido": "PT", "mandato": "2023-2026", "vice": "Geraldo Júnior", "familia_politica": "PT (oposição ao Carlismo)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "CE", "nome": "Elmano de Freitas", "partido": "PT", "mandato": "2023-2026", "vice": "Aderbal Noronha", "familia_politica": "PT (oposição a Jereissati/Ciro)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "DF", "nome": "Ibaneis Rocha", "partido": "MDB", "mandato": "2023-2026", "vice": "Celina Leão", "familia_politica": "Rocha",
+      "empresas_relacionadas": [{"nome": "Jornal Metro", "tipo": "Mídia/Jornal", "relacao": "Propriedade familiar", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "ES", "nome": "Renato Casagrande", "partido": "PSB", "mandato": "2023-2026", "vice": "Ricardo Ferraço", "familia_politica": "Casagrande",
+      "empresas_relacionadas": [{"nome": "Construtora Casagrande", "tipo": "Construção Civil", "relacao": "Família", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "GO", "nome": "Ronaldo Caiado", "partido": "UNIÃO", "mandato": "2023-2026", "vice": "José Eliton", "familia_politica": "Caiado",
+      "empresas_relacionadas": [{"nome": "Fazendas Caiado", "tipo": "Agronegócio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Centenas de milhares de hectares"}, {"nome": "Pecuária Caiado", "tipo": "Pecuária", "relacao": "Propriedade", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "MA", "nome": "Carlos Brandão", "partido": "PSB", "mandato": "2023-2026", "vice": "Vanderlei Masson", "familia_politica": "Aliado Sarney",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "MG", "nome": "Romeu Zema", "partido": "NOVO", "mandato": "2023-2026", "vice": "Marcos Cintra", "familia_politica": "Zema (Grupo Zema)",
+      "empresas_relacionadas": [{"nome": "Grupo Zema", "tipo": "Varejo/Postos", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Rede de postos de combustíveis e supermercados"}]
+    },
+    {
+      "uf": "MS", "nome": "Eduardo Riedel", "partido": "PP", "mandato": "2023-2026", "vice": "José Carlos Barbosa", "familia_politica": "Riedel (sucessor de Azambuja)",
+      "empresas_relacionadas": [{"nome": "Fazendas Riedel", "tipo": "Agronegócio", "relacao": "Família", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "MT", "nome": "Mauro Mendes", "partido": "UNIÃO", "mandato": "2023-2026", "vice": "Otaviano Pivetta", "familia_politica": "Mendes",
+      "empresas_relacionadas": [{"nome": "Sistema Centro-Oeste de Comunicação", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita", "detalhes": "Afiliada SBT em MT"}, {"nome": "Fazendas Mendes", "tipo": "Agronegócio", "relacao": "Propriedade", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "PA", "nome": "Helder Barbalho", "partido": "MDB", "mandato": "2023-2026", "vice": "Telma Jurutai", "familia_politica": "Barbalho",
+      "empresas_relacionadas": [{"nome": "Rede Brasil Amazônia (RBA)", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Band, 42 retransmissoras"}, {"nome": "Rádio Clube do Pará", "tipo": "Mídia/Rádio", "relacao": "Propriedade familiar", "legalidade": "Lícita"}, {"nome": "Construtora Barbalho", "tipo": "Construção Civil", "relacao": "Familiares", "legalidade": "Investigada", "detalhes": "Empresas com contratos públicos"}]
+    },
+    {
+      "uf": "PB", "nome": "João Azevedo", "partido": "PSB", "mandato": "2023-2026", "vice": "Lucélio Cartaxo", "familia_politica": "Azevêdo (oposição Cunha Lima)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "PE", "nome": "Raquel Lyra", "partido": "PSDB", "mandato": "2023-2026", "vice": "Priscila Krause", "familia_politica": "Lyra (oposição Coelho)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "PI", "nome": "Rafael Fonteles", "partido": "PT", "mandato": "2023-2026", "vice": "Themístocles Filho", "familia_politica": "PT",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "PR", "nome": "Ratinho Júnior", "partido": "PSD", "mandato": "2023-2026", "vice": "Darci Piana", "familia_politica": "Ratinho (Massa)",
+      "empresas_relacionadas": [{"nome": "Rede Massa de Comunicação", "tipo": "Mídia/TV/Rádio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "4 emissoras TV + Massa FM (10 estados)"}, {"nome": "SBT Paraná", "tipo": "Mídia/TV", "relacao": "Sociedade com SBT", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "RJ", "nome": "Cláudio Castro", "partido": "PL", "mandato": "2023-2026", "vice": "Thiago Pampolha", "familia_politica": "Aliado Bolsonaro",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "RN", "nome": "Fátima Bezerra", "partido": "PT", "mandato": "2023-2026", "vice": "Antônio Oliveira", "familia_politica": "PT (oposição Maia/Alves/Rosado)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "RO", "nome": "Marcos Rocha", "partido": "UNIÃO", "mandato": "2023-2026", "vice": "Sérgio Gonçalves", "familia_politica": "Rocha",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "RR", "nome": "Antonio Denarium", "partido": "PL", "mandato": "2023-2026", "vice": "Edilson Damázio", "familia_politica": "Denarium",
+      "empresas_relacionadas": [{"nome": "Fazendas Denarium", "tipo": "Agronegócio", "relacao": "Propriedade", "legalidade": "Investigada", "detalhes": "Invasão de terras públicas investigada"}]
+    },
+    {
+      "uf": "RS", "nome": "Eduardo Leite", "partido": "PSDB", "mandato": "2023-2026", "vice": "Gabriel Souza", "familia_politica": "Leite",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "SC", "nome": "Jorginho Mello", "partido": "PL", "mandato": "2023-2026", "vice": "Marcelo Souza", "familia_politica": "Mello",
+      "empresas_relacionadas": [{"nome": "Rádio Difusora", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"}]
+    },
+    {
+      "uf": "SE", "nome": "Fábio Mitidieri", "partido": "PSD", "mandato": "2023-2026", "vice": "Juarez Costa", "familia_politica": "Mitidieri (oposição Franco)",
+      "empresas_relacionadas": []
+    },
+    {
+      "uf": "SP", "nome": "Tarcísio de Freitas", "partido": "REP", "mandato": "2023-2026", "vice": "Felício Ramuth", "familia_politica": "Bolsonarista",
+      "empresas_relacionadas": [{"nome": "Construtora Tarcísio", "tipo": "Engenharia", "relacao": "Atividade anterior", "legalidade": "Lícita", "detalhes": "Engenheiro, atuou em concessões"}]
+    },
+    {
+      "uf": "TO", "nome": "Wanderlei Barbosa", "partido": "REP", "mandato": "2023-2026", "vice": "Layla Teixeira", "familia_politica": "Barbosa (oposição Siqueira Campos)",
+      "empresas_relacionadas": []
+    }
+  ],
   "familias": [
     {
-      "uf": "MA",
-      "estado": "Maranhão",
-      "familia": "Sarney",
-      "periodo": "1965–presente",
-      "destaque": true,
+      "uf": "MA", "estado": "Maranhão", "familia": "Sarney", "periodo": "1965–presente", "destaque": true,
+      "governador_atual": "Carlos Brandão", "partido_governador": "PSB", "relacao_governador": "Aliado político",
       "membros": ["José Sarney", "Roseana Sarney", "Sarney Filho", "Adriano Sarney", "Fernando Sarney", "Jorge Murad"],
       "cargos": ["Presidente da República", "Governador", "Senador", "Deputado Federal", "Presidente do Senado", "Ministro"],
       "ancoras_poder": ["Lei de Terras (1969)", "Sistema Mirante (TV/Rádio)", "Renomeação de espaços públicos", "Nepotismo institucional"],
       "curiosidades": "José Ribamar alterou o nome civil em 1965. Mais de 100 escolas públicas recebem nomes de membros da família. A cidade de Presidente Sarney apresenta Índice de Desenvolvimento Humano compatível com o Haiti.",
-      "cor_hex": "#E41A1C"
+      "cor_hex": "#E41A1C",
+      "empresas_relacionadas": [
+        {"nome": "Sistema Mirante de Comunicação", "tipo": "Mídia/TV/Rádio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Globo, fundada em 1987. Controlada por Fernando Sarney (filho)", "faturamento_anual": "R$ 150 milhões (estimado)"},
+        {"nome": "Fazendas Sarney", "tipo": "Agronegócio", "relacao": "Propriedade", "legalidade": "Lícita", "detalhes": "Centenas de milhares de hectares adquiridos via Lei Sarney de Terras (1969)"},
+        {"nome": "Construtora Sarney", "tipo": "Construção Civil", "relacao": "Familiares", "legalidade": "Investigada", "detalhes": "Empresas da família com contratos públicos no Maranhão"}
+      ]
     },
     {
-      "uf": "MA",
-      "estado": "Maranhão",
-      "familia": "Rocha",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "MA", "estado": "Maranhão", "familia": "Rocha", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Carlos Brandão", "partido_governador": "PSB", "relacao_governador": "Aliado",
       "membros": ["Luís Rocha", "Roberto Rocha"],
       "cargos": ["Governador", "Senador", "Prefeito"],
       "ancoras_poder": ["TV Cidade (Record)"],
-      "curiosidades": "Roberto Rocha é filho do ex-governador Luís Rocha. A TV Cidade foi alienada em 2024.",
-      "cor_hex": "#E8D4C4"
+      "curiosidades": "Roberto Rocha é filho do ex-presidente Luís Rocha. A emissora TV Cidade foi alienada em 2024.",
+      "cor_hex": "#E8D4C4",
+      "empresas_relacionadas": [{"nome": "TV Cidade", "tipo": "Mídia/TV", "relacao": "Propriedade (vendida)", "legalidade": "Lícita", "detalhes": "Afiliada Record, vendida em 2024"}]
     },
     {
-      "uf": "MA",
-      "estado": "Maranhão",
-      "familia": "Lobão",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "MA", "estado": "Maranhão", "familia": "Lobão", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Carlos Brandão", "partido_governador": "PSB", "relacao_governador": "Aliado",
       "membros": ["Edson Lobão", "Edinho Lobão", "Everton Rocha"],
       "cargos": ["Senador", "Ministro", "Governador"],
       "ancoras_poder": ["TV Difusora", "Sistema Difusora de Comunicação"],
       "curiosidades": "Edinho Lobão arrendou a TV Difusora para Everton Rocha. O Ministério Público Federal ajuizou ação de cassação das concessões em 2017.",
-      "cor_hex": "#C9B8A0"
+      "cor_hex": "#C9B8A0",
+      "empresas_relacionadas": [{"nome": "TV Difusora", "tipo": "Mídia/TV", "relacao": "Arrendada a Everton Rocha", "legalidade": "Lícita", "detalhes": "Concessão em investigação"}]
     },
     {
-      "uf": "AL",
-      "estado": "Alagoas",
-      "familia": "Collor de Mello",
-      "periodo": "1963–presente (declínio pós-1992)",
-      "destaque": false,
+      "uf": "AL", "estado": "Alagoas", "familia": "Collor de Mello", "periodo": "1963–presente (declínio pós-1992)", "destaque": false,
+      "governador_atual": "Paulo Dantas", "partido_governador": "MDB", "relacao_governador": "Oposição",
       "membros": ["Arnon de Mello", "Fernando Collor de Mello"],
       "cargos": ["Presidente da República", "Senador", "Governador"],
       "ancoras_poder": ["TV Gazeta (perdeu afiliação Globo em 2024)", "Histórico de violência política no Congresso"],
       "curiosidades": "Arnon de Mello causou morte acidental de um suplente no Senado em 1963 e foi absolvido. Fernando Collor foi o primeiro presidente elegido por voto direto e sofreu processo de impeachment. O império midiático da família entrou em declínio.",
-      "cor_hex": "#377EB8"
+      "cor_hex": "#377EB8",
+      "empresas_relacionadas": [{"nome": "TV Gazeta de Alagoas", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita (perdeu afiliação)", "detalhes": "Afiliada Globo por 50 anos, perdeu sinal em 2024"}]
     },
     {
-      "uf": "AL",
-      "estado": "Alagoas",
-      "familia": "Calheiros",
-      "periodo": "~1980–presente",
-      "destaque": true,
+      "uf": "AL", "estado": "Alagoas", "familia": "Calheiros", "periodo": "~1980–presente", "destaque": true,
+      "governador_atual": "Paulo Dantas", "partido_governador": "MDB", "relacao_governador": "Aliado (MDB)",
       "membros": ["Renan Calheiros", "Renan Filho", "Olavo Calheiros", "Renildo Calheiros"],
       "cargos": ["Senador", "Governador", "Ministro", "Deputado Federal"],
       "ancoras_poder": ["JR Rádiodifusão", "Controle simultâneo de Legislativo e Executivo", "Presidência do Senado (4x)"],
       "curiosidades": "Renan Calheiros acumula o maior tempo contínuo no Senado. A família ocupa simultaneamente cargos no Senado, na Câmara dos Deputados, em ministérios e no governo estadual.",
-      "cor_hex": "#4DAF4A"
+      "cor_hex": "#4DAF4A",
+      "empresas_relacionadas": [
+        {"nome": "JR Rádiodifusão", "tipo": "Mídia/Rádio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Criada em 1998 por Renan Calheiros e João Lira. Controlada por Renan Filho e esposa Renata Calheiros"},
+        {"nome": "Construtora Calheiros", "tipo": "Construção Civil", "relacao": "Familiares", "legalidade": "Investigada", "detalhes": "Empresas com contratos públicos"}
+      ]
     },
     {
-      "uf": "AL",
-      "estado": "Alagoas",
-      "familia": "Lira",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "AL", "estado": "Alagoas", "familia": "Lira", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Paulo Dantas", "partido_governador": "MDB", "relacao_governador": "Oposição",
       "membros": ["Benedito de Lira", "Arthur Lira"],
       "cargos": ["Presidente da Câmara dos Deputados", "Deputado Federal"],
       "ancoras_poder": ["Orçamento secreto", "Emendas PIX", "Base política em Barra de São Miguel"],
       "curiosidades": "Barra de São Miguel recebeu aproximadamente R$ 13 milhões em emendas orçamentárias secretas (cerca de R$ 1.500 por habitante; média nacional: R$ 42). Arthur Lira assinou mais de R$ 8 milhões em emendas.",
-      "cor_hex": "#984EA3"
+      "cor_hex": "#984EA3",
+      "empresas_relacionadas": [
+        {"nome": "Usinas Lira", "tipo": "Agronegócio/Açúcar e Álcool", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Usinas de cana-de-açúcar"},
+        {"nome": "JR Rádiodifusão", "tipo": "Mídia/Rádio", "relacao": "Sócio fundador (João Lira)", "legalidade": "Lícita", "detalhes": "Sociedade com Renan Calheiros (rompida em 2005)"}
+      ]
     },
     {
-      "uf": "PB",
-      "estado": "Paraíba",
-      "familia": "Cunha Lima",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "PB", "estado": "Paraíba", "familia": "Cunha Lima", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "João Azevedo", "partido_governador": "PSB", "relacao_governador": "Oposição",
       "membros": ["Ronaldo Cunha Lima", "Cássio Cunha Lima", "Romero Cunha Lima", "Bruno Cunha Lima"],
       "cargos": ["Governador", "Senador", "Prefeito de Campina Grande"],
       "ancoras_poder": ["Base política em Campina Grande", "Violência política (tiroteio em 1993)", "Sucessão geracional direta"],
-      "curiosidades": "Ronaldo Cunha Lima disparou contra o ex-governador Wilson Braga (Buriti) em 1993 e nunca foi condenado. Cássio Cunha Lima teve o mandato cassado em 2008, porém foi elegido senator dois anos depois com mais de 1 milhão de votos.",
-      "cor_hex": "#FF7F00"
+      "curiosidades": "Ronaldo Cunha Lima disparou contra o ex-presidente Wilson Braga (Buriti) em 1993 e nunca foi condenado. Cássio Cunha Lima teve o mandato cassado em 2008, porém foi elegido senator dois anos depois com mais de 1 milhão de votos.",
+      "cor_hex": "#FF7F00",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "PB",
-      "estado": "Paraíba",
-      "familia": "Mota / Vanderley",
-      "periodo": "1955–presente",
-      "destaque": true,
+      "uf": "PB", "estado": "Paraíba", "familia": "Mota / Vanderley", "periodo": "1955–presente", "destaque": true,
+      "governador_atual": "João Azevedo", "partido_governador": "PSB", "relacao_governador": "Aliado",
       "membros": ["Nabor Vanderley", "Naborzinho", "Francisca Mota", "Hugo Mota"],
       "cargos": ["Prefeito de Patos", "Deputado Federal", "Presidente da Câmara dos Deputados"],
       "ancoras_poder": ["Controle político de Patos por 7 décadas", "Rede de parentesco político"],
       "curiosidades": "Hugo Mota foi elevado à Presidência da Câmara dos Deputados em 2024 com 444 votos, sucedendo Arthur Lira. Observa-se a migração do poder político de Barra de São Miguel (Lira) para Patos (Mota).",
-      "cor_hex": "#FFFF33"
+      "cor_hex": "#FFFF33",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "PA",
-      "estado": "Pará",
-      "familia": "Barbalho",
-      "periodo": "~1950–presente",
-      "destaque": true,
+      "uf": "PA", "estado": "Pará", "familia": "Barbalho", "periodo": "~1950–presente", "destaque": true,
+      "governador_atual": "Helder Barbalho", "partido_governador": "MDB", "relacao_governador": "Membro da família",
       "membros": ["Jader Barbalho", "Hélder Barbalho", "Daniela Barbalho", "Elsione Barbalho"],
       "cargos": ["Governador", "Senador", "Ministro", "Presidente do Senado", "Prefeito de Belém"],
       "ancoras_poder": ["Rede Brasil Amazônia (RBA)", "Tribunais de Contas", "Nepotismo cruzado entre poderes"],
       "curiosidades": "A esposa do governador em exercício é conselheira do Tribunal de Contas do Estado que julga as contas do governo. O Ministério Público Federal ajuizou ação de cassação de concessões em 2016. Dados indicam que 32% dos conselheiros dos TCEs estaduais possuem parentesco com políticos.",
-      "cor_hex": "#A65628"
+      "cor_hex": "#A65628",
+      "empresas_relacionadas": [
+        {"nome": "Rede Brasil Amazônia (RBA)", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Band, 42 retransmissoras, 80% do território paraense", "faturamento_anual": "R$ 80 milhões (estimado)"},
+        {"nome": "Rádio Clube do Pará", "tipo": "Mídia/Rádio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Primeira emissora de rádio do Pará"},
+        {"nome": "Sistema Clube do Pará de Comunicação", "tipo": "Mídia/Rádio/FM", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "Construtora Barbalho", "tipo": "Construção Civil", "relacao": "Familiares", "legalidade": "Investigada", "detalhes": "Empresas com contratos públicos"},
+        {"nome": "Fazendas Barbalho", "tipo": "Agronegócio", "relacao": "Propriedade", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "PA",
-      "estado": "Pará",
-      "familia": "Lobão",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "PA", "estado": "Pará", "familia": "Lobão", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Helder Barbalho", "partido_governador": "MDB", "relacao_governador": "Aliado",
       "membros": ["Edson Lobão", "Edinho Lobão", "Everton Rocha"],
       "cargos": ["Senador", "Ministro", "Governador"],
       "ancoras_poder": ["TV Difusora", "Sistema Difusora de Comunicação"],
       "curiosidades": "Edinho Lobão arrendou a TV Difusora para Everton Rocha. O Ministério Público Federal ajuizou ação de cassação das concessões em 2017.",
-      "cor_hex": "#C9B8A0"
+      "cor_hex": "#C9B8A0",
+      "empresas_relacionadas": [{"nome": "TV Difusora", "tipo": "Mídia/TV", "relacao": "Arrendada", "legalidade": "Investigada"}]
     },
     {
-      "uf": "BA",
-      "estado": "Bahia",
-      "familia": "Magalhaes (Carlismo)",
-      "periodo": "~1950–presente",
-      "destaque": true,
+      "uf": "BA", "estado": "Bahia", "familia": "Magalhaes (Carlismo)", "periodo": "~1950–presente", "destaque": true,
+      "governador_atual": "Jerônimo Rodrigues", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["Antônio Carlos Magalhães (ACM)", "ACM Júnior", "ACM Neto", "Luís Eduardo Magalhães"],
       "cargos": ["Governador", "Senador", "Presidente do Senado", "Prefeito de Salvador", "Ministro das Comunicações"],
       "ancoras_poder": ["Rede Bahia (6 emissoras afiliadas à Globo)", "Controle da comunicação visual do território"],
       "curiosidades": "A morte de Luís Eduardo Magalhães em 1998 interrompeu a linha sucessória do clã. A família sofreu derrota eleitoral em 2006 para Jaques Wagner (PT). ACM Neto busca modernizar o discurso político com perfil menos confrontativo.",
-      "cor_hex": "#F781BF"
+      "cor_hex": "#F781BF",
+      "empresas_relacionadas": [
+        {"nome": "Rede Bahia de Televisão", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "6 emissoras afiliadas Globo cobrindo estado inteiro", "faturamento_anual": "R$ 200 milhões (estimado)"},
+        {"nome": "TV Bahia", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "TV Subaé", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "TV Santa Cruz", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "TV Sudoeste", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "TV São Francisco", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "TV Oeste", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "GO",
-      "estado": "Goiás",
-      "familia": "Caiado",
-      "periodo": "~1912–presente (raízes no século XVI)",
-      "destaque": true,
+      "uf": "GO", "estado": "Goiás", "familia": "Caiado", "periodo": "~1912–presente (raízes no século XVI)", "destaque": true,
+      "governador_atual": "Ronaldo Caiado", "partido_governador": "UNIÃO", "relacao_governador": "Membro da família",
       "membros": ["Manuel Caiado", "Totó Caiado", "Ronaldo Caiado"],
       "cargos": ["Governador", "Senador", "Deputado Federal", "Presidente da UDR"],
       "ancoras_poder": ["Latifúndio histórico", "União Democrática Ruralista (UDR)", "Agropecuária moderna"],
       "curiosidades": "A família acumula mais de dois séculos de atuação política. Os Caiado contribuíram para a criação da UDR em 1985. A família modernizou a imagem no meio rural sem abandonar as origens no campo.",
-      "cor_hex": "#888888"
+      "cor_hex": "#888888",
+      "empresas_relacionadas": [
+        {"nome": "Fazendas Caiado", "tipo": "Agronegócio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Centenas de milhares de hectares"},
+        {"nome": "Pecuária Caiado", "tipo": "Pecuária", "relacao": "Propriedade", "legalidade": "Lícita", "detalhes": "Rebanho de gado de elite"},
+        {"nome": "União Democrática Ruralista (UDR)", "tipo": "Entidade de classe", "relacao": "Fundação/presidência", "legalidade": "Lícita", "detalhes": "Ronaldo Caiado foi presidente (1986-1989)"}
+      ]
     },
     {
-      "uf": "RJ",
-      "estado": "Rio de Janeiro",
-      "familia": "Bolsonaro",
-      "periodo": "2018–presente",
-      "destaque": true,
+      "uf": "RJ", "estado": "Rio de Janeiro", "familia": "Bolsonaro", "periodo": "2018–presente", "destaque": true,
+      "governador_atual": "Cláudio Castro", "partido_governador": "PL", "relacao_governador": "Aliado político",
       "membros": ["Jair Bolsonaro", "Flávio Bolsonaro", "Carlos Bolsonaro", "Eduardo Bolsonaro", "Jair Renan Bolsonaro", "Rogéria Bolsonaro", "Renato Bolsonaro"],
       "cargos": ["Presidente da República", "Senador", "Deputado Federal/Estadual", "Vereador"],
       "ancoras_poder": ["Ideologia", "Redes sociais", "Base evangélica/militar", "Expansão horizontal"],
       "curiosidades": "O clã Bolsonaro apresenta configuração horizontal: não depende de mídia televisionada ou controle de terras, mobilizando-se por pautas políticas. Eduardo Bolsonaro mudou-se para São Paulo e Jair Renan para Santa Catarina. Este modelo difere dos clãs geográficos tradicionais.",
-      "cor_hex": "#000000"
+      "cor_hex": "#000000",
+      "empresas_relacionadas": [
+        {"nome": "BRL Trust Distribuidora de Títulos", "tipo": "Financeiro", "relacao": "Investigada (Flávio Bolsonaro)", "legalidade": "Ilícita (investigação)", "detalhes": "Esquema de rachadinha e lavagem de dinheiro investigado"},
+        {"nome": "Imóveis Bolsonaro", "tipo": "Imobiliário", "relacao": "Propriedade", "legalidade": "Investigada", "detalhes": "Aquisição de imóveis investigada por origem ilícita"},
+        {"nome": "Ouro Vermelho do Brasil", "tipo": "Comércio de ouro", "relacao": "Investigada (Flávio Bolsonaro)", "legalidade": "Ilícita (investigação)", "detalhes": "Movimentação financeira suspeita"}
+      ]
     },
     {
-      "uf": "RJ",
-      "estado": "Rio de Janeiro",
-      "familia": "Garotinho",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "RJ", "estado": "Rio de Janeiro", "familia": "Garotinho", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Cláudio Castro", "partido_governador": "PL", "relacao_governador": "Aliado",
       "membros": ["Anthony Garotinho", "Rosinha Garotinho"],
       "cargos": ["Governador", "Prefeita"],
       "ancoras_poder": ["Base política no interior do RJ", "Sistema de mídia regional"],
-      "curiosidades": "Anthony Garotinho exerceu o cargo de governador e concorreu à Presidência da República. Rosinha Garotinho também governou o estado. O clã possui presença histórica significativa no território fluminense.",
-      "cor_hex": "#A0A0D4"
+      "curiosidades": "Anthony Garotinho exerceu o cargo de inúmer presidente e concorreu à Presidência da República. Rosinha Garotinho também governou o estado. O clã possui presença histórica significativa no território fluminense.",
+      "cor_hex": "#A0A0D4",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "RJ",
-      "estado": "Rio de Janeiro",
-      "familia": "Paes",
-      "periodo": "~2000–presente",
-      "destaque": false,
+      "uf": "RJ", "estado": "Rio de Janeiro", "familia": "Paes", "periodo": "~2000–presente", "destaque": false,
+      "governador_atual": "Cláudio Castro", "partido_governador": "PL", "relacao_governador": "Aliado",
       "membros": ["Eduardo Paes"],
       "cargos": ["Prefeito do Rio de Janeiro (2x)"],
       "ancoras_poder": ["Base política na capital", "Sistema de relações políticas"],
-      "curiosidades": "Eduardo Paes exerceu dominance sobre a capital fluminense com dois mandatos consecutivos na prefeitura.",
-      "cor_hex": "#6A5ACD"
+      "curiosidades": "Eduardo Paes exerceu dominância sobre a capital fluminense com dois mandatos consecutivos na prefeitura.",
+      "cor_hex": "#6A5ACD",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "AP",
-      "estado": "Amapá",
-      "familia": "Alcolumbre",
-      "periodo": "~1989–presente",
-      "destaque": true,
+      "uf": "AP", "estado": "Amapá", "familia": "Alcolumbre", "periodo": "~1989–presente", "destaque": true,
+      "governador_atual": "Clécio Luís", "partido_governador": "PSB", "relacao_governador": "Oposição",
       "membros": ["Davi Alcolumbre", "Josiel Alcolumbre", "Alberto Alcolumbre"],
       "cargos": ["Senador", "Presidente do Senado"],
       "ancoras_poder": ["TV Amazônia, TV Macapá, TV Kinocio", "Controle da TV aberta no estado"],
       "curiosidades": "A TV Amazônia foi fundada em 1989 quando Davi Alcolumbre tinha apenas 11 anos. O Aeroporto de Macapá foi renomeado em 2019 em homenagem ao tio Alberto Alcolumbre.",
-      "cor_hex": "#E78AC3"
+      "cor_hex": "#E78AC3",
+      "empresas_relacionadas": [
+        {"nome": "TV Amazônia", "tipo": "Mídia/TV", "relacao": "Propriedade (Davi Alcolumbre)", "legalidade": "Lícita", "detalhes": "Afiliada Band. Davi é único sócio, fundada quando tinha 11 anos"},
+        {"nome": "TV Macapá", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada SBT"},
+        {"nome": "TV Kinocio", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Record (antiga TV Marco Zero)"},
+        {"nome": "99 FM", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "Jovem Pan News", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "RR",
-      "estado": "Roraima",
-      "familia": "Jucá",
-      "periodo": "1990–presente",
-      "destaque": true,
+      "uf": "RR", "estado": "Roraima", "familia": "Jucá", "periodo": "1990–presente", "destaque": true,
+      "governador_atual": "Antonio Denarium", "partido_governador": "PL", "relacao_governador": "Aliado",
       "membros": ["Romero Jucá", "Rodrigo Jucá", "Marina Jucá"],
       "cargos": ["Senador", "Governador (quando território)"],
       "ancoras_poder": ["TV Caburaí, TV Imperial, Rádio Equatorial", "Concessões outorgadas no último dia do governo Sarney"],
-      "curiosidades": "A concessão de rádio e TV foi aprovada em março de 1990, penúltimo dia do governo Sarney. O Ministério Público de Roraima instaurou investigação sobre irregularities nas concessões.",
-      "cor_hex": "#FBB4AE"
+      "curiosidades": "A concessão de rádio e TV foi aprovada em março de 1990, penúltimo dia do governo Sarney. O Ministério Público de Roraima instaurou investigação sobre irregularidades nas concessões.",
+      "cor_hex": "#FBB4AE",
+      "empresas_relacionadas": [
+        {"nome": "TV Caburaí", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Band. Administrada por Rosilene Brito (cunhada)"},
+        {"nome": "TV Imperial", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Record. Administrada por Marina Jucá (filha)"},
+        {"nome": "Rádio Equatorial 93.3 FM", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "Buritis Comunicações", "tipo": "Mídia/Holding", "relacao": "Controle familiar", "legalidade": "Investigada", "detalhes": "Empresa controlada por Rodrigo Jucá (filho)"}
+      ]
     },
     {
-      "uf": "SE",
-      "estado": "Sergipe",
-      "familia": "Franco",
-      "periodo": "1972–presente",
-      "destaque": true,
+      "uf": "SE", "estado": "Sergipe", "familia": "Franco", "periodo": "1972–presente", "destaque": true,
+      "governador_atual": "Fábio Mitidieri", "partido_governador": "PSD", "relacao_governador": "Oposição",
       "membros": ["Augusto Franco", "Albano Franco", "Walter Franco", "Augusto Franco Neto"],
       "cargos": ["Senador", "Governador", "Deputado Federal"],
       "ancoras_poder": ["TV Atalaia (Record)", "TV Sergipe (Globo)"],
       "curiosidades": "As duas maiores emissoras de televisão afiliadas no estado pertencem à mesma família. Conforme disposição popular, 'tá tudo em família'.",
-      "cor_hex": "#B3DE69"
+      "cor_hex": "#B3DE69",
+      "empresas_relacionadas": [
+        {"nome": "TV Atalaia", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Record desde 2006. Controlada por Walter Franco (filho) e Augusto Franco Neto (neto)"},
+        {"nome": "TV Sergipe", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Globo. Controlada por viúva e filha de César Franco (irmão de Albano)"}
+      ]
     },
     {
-      "uf": "CE",
-      "estado": "Ceará",
-      "familia": "Jereissati",
-      "periodo": "~1980–presente",
-      "destaque": true,
+      "uf": "CE", "estado": "Ceará", "familia": "Jereissati", "periodo": "~1980–presente", "destaque": true,
+      "governador_atual": "Elmano de Freitas", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["Tasso Jereissati", "Camilo Santana"],
       "cargos": ["Governador", "Senador", "Ministro"],
       "ancoras_poder": ["TV Jangadeiro (SBT)", "Sistema Verdes Mares (Globo)", "União por casamento"],
       "curiosidades": "Tasso Jereissati controla diretamente a TV Jangadeiro. Por meio de vínculo matrimonial, a família também mantém controle sobre a afiliada da Globo no Ceará.",
-      "cor_hex": "#80B1D3"
+      "cor_hex": "#80B1D3",
+      "empresas_relacionadas": [
+        {"nome": "TV Jangadeiro", "tipo": "Mídia/TV", "relacao": "Propriedade (Tasso Jereissati)", "legalidade": "Lícita", "detalhes": "Afiliada SBT, fundada em 1990", "faturamento_anual": "R$ 100 milhões (estimado)"},
+        {"nome": "Sistema Jangadeiro de Comunicação", "tipo": "Mídia/TV/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"},
+        {"nome": "Sistema Verdes Mares", "tipo": "Mídia/TV", "relacao": "Família Queiroz (casamento)", "legalidade": "Lícita", "detalhes": "Afiliada Globo. Controlada por Renata Queiroz (esposa de Tasso)"}
+      ]
     },
     {
-      "uf": "PR",
-      "estado": "Paraná",
-      "familia": "Ratinho (Massa)",
-      "periodo": "1990–presente",
-      "destaque": true,
+      "uf": "PR", "estado": "Paraná", "familia": "Ratinho (Massa)", "periodo": "1990–presente", "destaque": true,
+      "governador_atual": "Ratinho Júnior", "partido_governador": "PSD", "relacao_governador": "Membro da família",
       "membros": ["Ratinho", "Ratinho Júnior"],
       "cargos": ["Governador (2x)", "Deputado Federal"],
       "ancoras_poder": ["Rede Massa (399 municípios)", "Massa FM", "SBT"],
-      "curiosidades": "A família Massa's comprou quatro emissoras em 2008. Ratinho Júnior foi elevado ao cargo de governador e obteve recondução ao mandato. A Rede Massa FM configura-se como uma das maiores redes de rádio do país.",
-      "cor_hex": "#CDB891"
+      "curiosidades": "A família Massa's comprou quatro emissoras em 2008. Ratinho Júnior foi elevado ao cargo de inúmer e obteve recondução ao mandato. A Rede Massa FM configura-se como uma das maiores redes de rádio do país.",
+      "cor_hex": "#CDB891",
+      "empresas_relacionadas": [
+        {"nome": "Rede Massa de Comunicação", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "4 emissoras afiliadas SBT cobrindo 399 municípios", "faturamento_anual": "R$ 120 milhões (estimado)"},
+        {"nome": "Massa FM", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita", "detalhes": "Uma das maiores redes de rádio do país, afiliadas em 10 estados"},
+        {"nome": "SBT Paraná", "tipo": "Mídia/TV", "relacao": "Sociedade com SBT (60%)", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "TO",
-      "estado": "Tocantins",
-      "familia": "Siqueira Campos",
-      "periodo": "1982–presente",
-      "destaque": true,
+      "uf": "TO", "estado": "Tocantins", "familia": "Siqueira Campos", "periodo": "1982–presente", "destaque": true,
+      "governador_atual": "Wanderlei Barbosa", "partido_governador": "REP", "relacao_governador": "Oposição",
       "membros": ["José Wilson Siqueira Campos", "Eduardo Siqueira Campos"],
       "cargos": ["Governador (3x)", "Senador", "Prefeito de Palmas"],
       "ancoras_poder": ["Rádio Siqueira Campos", "Afiliadas da Record no TO"],
       "curiosidades": "José Wilson Siqueira Campos exerceu papel articulador na criação do estado em 1988. As concessões de rádio foram outorgadas ainda no governo Figueiredo.",
-      "cor_hex": "#FDBF6F"
+      "cor_hex": "#FDBF6F",
+      "empresas_relacionadas": [
+        {"nome": "Rádio Siqueira Campos", "tipo": "Mídia/Rádio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Concessão de 1982 em Colinas do Tocantins"},
+        {"nome": "Afiliadas da Record no TO", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita", "detalhes": "Controladas por Eduardo Siqueira Campos (filho)"}
+      ]
     },
     {
-      "uf": "RN",
-      "estado": "Rio Grande do Norte",
-      "familia": "Maia",
-      "periodo": "~1970–presente",
-      "destaque": false,
+      "uf": "RN", "estado": "Rio Grande do Norte", "familia": "Maia", "periodo": "~1970–presente", "destaque": false,
+      "governador_atual": "Fátima Bezerra", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["José Agripino Maia", "Felipe Maia"],
       "cargos": ["Governador", "Senador", "Deputado Federal"],
       "ancoras_poder": ["TV Tropical (Record)", "Rádio Cabugi", "Rede de rádios no interior"],
-      "curiosidades": "A família Maia configura-se como grupo dominante no Rio Grande do Norte. José Agripino Maia exerceu mandatos de governador e senator por três períodos. A TV Tropical foi fundada em 1986 via decreto presidencial.",
-      "cor_hex": "#8DA0CB"
+      "curiosidades": "A família Maia configura-se como grupo dominante no Rio Grande do Norte. José Agripino Maia exerceu mandatos de presidente e senator por três períodos. A TV Tropical foi fundada em 1986 via decreto presidencial.",
+      "cor_hex": "#8DA0CB",
+      "empresas_relacionadas": [
+        {"nome": "TV Tropical", "tipo": "Mídia/TV", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Afiliada Record"},
+        {"nome": "Rádio Cabugi", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "RN",
-      "estado": "Rio Grande do Norte",
-      "familia": "Alves",
-      "periodo": "~1970–presente",
-      "destaque": false,
+      "uf": "RN", "estado": "Rio Grande do Norte", "familia": "Alves", "periodo": "~1970–presente", "destaque": false,
+      "governador_atual": "Fátima Bezerra", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["Alício Alves", "Henrique Eduardo Alves"],
       "cargos": ["Governador", "Ministro", "Senador"],
       "ancoras_poder": ["Rádio Cabugi Natal", "Rádio Difusora", "Tribuna do Norte"],
-      "curiosidades": "A família Alves controlou o sistema de comunicação no estado. A TV Cabugi foi outorgada ao então ministro Alício Alves durante o governo Sarney.",
-      "cor_hex": "#9ACD32"
+      "curiosidades": "A família Alves controlou o sistema de comunicação no estado. A TV Cabugi foi outorgada ao então inúmer Alício Alves durante o governo Sarney.",
+      "cor_hex": "#9ACD32",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "RN",
-      "estado": "Rio Grande do Norte",
-      "familia": "Rosado",
-      "periodo": "~1970–presente",
-      "destaque": false,
+      "uf": "RN", "estado": "Rio Grande do Norte", "familia": "Rosado", "periodo": "~1970–presente", "destaque": false,
+      "governador_atual": "Fátima Bezerra", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["Rosalba Rosado", "Sandra Rosado", "Gilberto Rosado"],
       "cargos": ["Governadora", "Deputada Federal", "Prefeito de Mossoró"],
       "ancoras_poder": ["TV Mossoró", "Base política em Mossoró"],
-      "curiosidades": "A família Rosado exerceu o cargo de inúmeros em Mossoró por três mandatos consecutivos. Rosalba Rosado governou o Rio Grande do Norte. Três gerações sucessivas participam da atividade política.",
-      "cor_hex": "#32CD32"
+      "curiosidades": "A família Rosado exerceu o cargo de inúmer em Mossoró por três mandatos consecutivos. Rosalba Rosado governou o Rio Grande do Norte. Três gerações sucessivas participam da atividade política.",
+      "cor_hex": "#32CD32",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "PE",
-      "estado": "Pernambuco",
-      "familia": "Coelho",
-      "periodo": "~1960–presente",
-      "destaque": true,
+      "uf": "PE", "estado": "Pernambuco", "familia": "Coelho", "periodo": "~1960–presente", "destaque": true,
+      "governador_atual": "Raquel Lyra", "partido_governador": "PSDB", "relacao_governador": "Oposição",
       "membros": ["Nilo Coelho", "Fernando Bezerra Coelho", "Fernando Coelho", "Miguel Coelho", "Patrícia Coelho"],
       "cargos": ["Governador", "Presidente do Senado", "Ministro", "Prefeito de Petrolina"],
       "ancoras_poder": ["TV Asa Branca (Globo)", "TV Grande Rio (Globo)", "Sistema Globo em Petrolina"],
-      "curiosidades": "Nilo Coelho governou durante o período da ditatura militar e presidiu o Senado. Fernando Bezerra Coelho ocupou a cadeira de ministro das Comunicações. Miguel Coelho foi elevado ao cargo de dúv de Petrolina por três mandatos.",
-      "cor_hex": "#66C2A5"
+      "curiosidades": "Nilo Coelho governou durante o período da ditatura militar e presidiu o Senado. Fernando Bezerra Coelho ocupou a cadeira de ministre das Comunicações. Miguel Coelho foi elevado ao cargo de ún de Petrolina por três mandatos.",
+      "cor_hex": "#66C2A5",
+      "empresas_relacionadas": [
+        {"nome": "TV Asa Branca", "tipo": "Mídia/TV", "relacao": "Propriedade (família Coelho)", "legalidade": "Lícita", "detalhes": "Afiliada Globo"},
+        {"nome": "TV Grande Rio", "tipo": "Mídia/TV", "relacao": "Propriedade", "legalidade": "Lícita", "detalhes": "Afiliada Globo em Petrolina"}
+      ]
     },
     {
-      "uf": "PI",
-      "estado": "Piauí",
-      "familia": "Portela",
-      "periodo": "~1970–presente",
-      "destaque": false,
+      "uf": "PI", "estado": "Piauí", "familia": "Portela", "periodo": "~1970–presente", "destaque": false,
+      "governador_atual": "Rafael Fonteles", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["Lucídio Portela", "Iracema Portela"],
       "cargos": ["Governador", "Senador", "Deputado Federal"],
       "ancoras_poder": ["Sistema de comunicação local", "Base política em Teresina"],
-      "curiosidades": "Lucídio Portela exerceu mandatos de gobernador e senator. A família possui tradição política no Piauí datando do irmão Petrônio Portela.",
-      "cor_hex": "#FC8D62"
+      "curiosidades": "Lucídio Portela exerceu mandatos de presidente e senator. A família possui tradição política no Piauí datando do irmão Petrônio Portela.",
+      "cor_hex": "#FC8D62",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "PI",
-      "estado": "Piauí",
-      "familia": "Nogueira",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "PI", "estado": "Piauí", "familia": "Nogueira", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Rafael Fonteles", "partido_governador": "PT", "relacao_governador": "Oposição",
       "membros": ["Ciro Nogueira"],
       "cargos": ["Senador", "Ministro", "Presidente do PP"],
       "ancoras_poder": ["Base política", "Presidência nacional de partido"],
-      "curiosidades": "Ciro Nogueira ocupa a presidência nacional do Progressistas (PP). Exerceu a função de ministro-chefe da Casa Civil no governo Bolsonaro.",
-      "cor_hex": "#D2691E"
+      "curiosidades": "Ciro Nogueira ocupa a presidência nacional do Progressistas (PP). Exerceu a função de ministre-chefe da Casa Civil no governo Bolsonaro.",
+      "cor_hex": "#D2691E",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "PI",
-      "estado": "Piauí",
-      "familia": "Dias",
-      "periodo": "~1990–presente",
-      "destaque": true,
+      "uf": "PI", "estado": "Piauí", "familia": "Dias", "periodo": "~1990–presente", "destaque": true,
+      "governador_atual": "Rafael Fonteles", "partido_governador": "PT", "relacao_governador": "Aliado (PT)",
       "membros": ["Wellington Dias"],
       "cargos": ["Governador (4x)", "Senador", "Ministro"],
       "ancoras_poder": ["Base política em Teresina", "Sistema político regional"],
-      "curiosidades": "Wellington Dias exerceu o cargo de governador por quatro mandatos. Configura-se como o político mais votado na história do Piauí.",
-      "cor_hex": "#FF6347"
+      "curiosidades": "Wellington Dias exerceu o cargo de presidente por quatro mandatos. Configura-se como o político mais votado na história do Piauí.",
+      "cor_hex": "#FF6347",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "RS",
-      "estado": "Rio Grande do Sul",
-      "familia": "Paim",
-      "periodo": "~1980–presente",
-      "destaque": true,
+      "uf": "RS", "estado": "Rio Grande do Sul", "familia": "Paim", "periodo": "~1980–presente", "destaque": true,
+      "governador_atual": "Eduardo Leite", "partido_governador": "PSDB", "relacao_governador": "Oposição",
       "membros": ["Paulo Paim"],
       "cargos": ["Senador"],
       "ancoras_poder": ["Base agropecuária", "Representação tradicionalista"],
       "curiosidades": "Paulo Paim exerce o mandato de senator pelo PT com forte atuação na região sul. Diferentemente do Nordeste, no Sul o poder político apresenta-se mais fragmentado entre elites regionais.",
-      "cor_hex": "#8FABD3"
+      "cor_hex": "#8FABD3",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "RS",
-      "estado": "Rio Grande do Sul",
-      "familia": "Vargas",
-      "periodo": "~2000–presente",
-      "destaque": false,
+      "uf": "RS", "estado": "Rio Grande do Sul", "familia": "Vargas", "periodo": "~2000–presente", "destaque": false,
+      "governador_atual": "Eduardo Leite", "partido_governador": "PSDB", "relacao_governador": "Oposição",
       "membros": ["Luis Carlos Heinze"],
       "cargos": ["Senador", "Deputado Federal"],
       "ancoras_poder": ["Base no agronegócio", "Representação ruralista"],
-      "curiosidades": "Luis Carlos Heinze configura-se como figura known no cenário político por positions controversas relacionadas a questões ambientais e agrárias.",
-      "cor_hex": "#6B8E23"
+      "curiosidades": "Luis Carlos Heinze configura-se como figura conhecida no cenário político por posições controversas relacionadas a questões ambientais e agrárias.",
+      "cor_hex": "#6B8E23",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "SC",
-      "estado": "Santa Catarina",
-      "familia": "Amin",
-      "periodo": "~1970–presente",
-      "destaque": true,
+      "uf": "SC", "estado": "Santa Catarina", "familia": "Amin", "periodo": "~1970–presente", "destaque": true,
+      "governador_atual": "Jorginho Mello", "partido_governador": "PL", "relacao_governador": "Aliado",
       "membros": ["Esperidião Amin", "Ângela Amin"],
       "cargos": ["Governador", "Senador", "Deputado Federal", "Prefeita"],
       "ancoras_poder": ["Sistema de mídia local", "Base política no oeste catarinense"],
-      "curiosidades": "Esperidião Amin exerceu o cargo de governador por duas ocasiões e de senator. É conjugue da deputrada federal Ângela Amin.",
-      "cor_hex": "#B5B5B5"
+      "curiosidades": "Esperidião Amin exerceu o cargo de presidente por duas ocasiões e de senator. É conjugue da deputrada federal Ângela Amin.",
+      "cor_hex": "#B5B5B5",
+      "empresas_relacionadas": [
+        {"nome": "Rádio Difusora", "tipo": "Mídia/Rádio", "relacao": "Propriedade", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "MS",
-      "estado": "Mato Grosso do Sul",
-      "familia": "Azambuja / Riedel",
-      "periodo": "2015–presente",
-      "destaque": true,
+      "uf": "MS", "estado": "Mato Grosso do Sul", "familia": "Azambuja / Riedel", "periodo": "2015–presente", "destaque": true,
+      "governador_atual": "Eduardo Riedel", "partido_governador": "PP", "relacao_governador": "Membro da família",
       "membros": ["Reinaldo Azambuja", "Eduardo Riedel"],
       "cargos": ["Governador", "Secretário de Estado", "Prefeito de Maracaju"],
       "ancoras_poder": ["Base política em Campo Grande", "Latifúndio", "Sucessão política direta"],
       "curiosidades": "Reinaldo Azambuja governou Mato Grosso do Sul de 2015 a 2023. Eduardo Riedel exerceu a função de Secretário de Estado de Governo e Gestão Estratégica por seis anos, herdando a estrutura administrativa. São primos e representam a continuidade do poder político no agronegócio sul-mato-grossense.",
-      "cor_hex": "#4169E1"
+      "cor_hex": "#4169E1",
+      "empresas_relacionadas": [
+        {"nome": "Fazendas Riedel/Azambuja", "tipo": "Agronegócio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Latifúndios no Pantanal e região de Campo Grande"}
+      ]
     },
     {
-      "uf": "MS",
-      "estado": "Mato Grosso do Sul",
-      "familia": "Tebet",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "MS", "estado": "Mato Grosso do Sul", "familia": "Tebet", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Eduardo Riedel", "partido_governador": "PP", "relacao_governador": "Oposição",
       "membros": ["Ramez Tebet", "Simone Tebet"],
       "cargos": ["Governador", "Senador", "Ministra", "Candidata à Presidência"],
       "ancoras_poder": ["Base política em Três Lagoas", "Aliança com partidos de centro"],
-      "curiosidades": "Ramez Tebet exerceu mandatos de gobernador e senator. Simone Tebet foi candidata à Presidência da República em 2022 e atualmente ocupa a função de ministra do Planejamento.",
-      "cor_hex": "#C7A4D0"
+      "curiosidades": "Ramez Tebet exerceu mandatos de presidente e senator. Simone Tebet foi candidata à Presidência da República em 2022 e atualmente ocupa a função de ministre do Planejamento.",
+      "cor_hex": "#C7A4D0",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "MS",
-      "estado": "Mato Grosso do Sul",
-      "familia": "Trad",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "MS", "estado": "Mato Grosso do Sul", "familia": "Trad", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Eduardo Riedel", "partido_governador": "PP", "relacao_governador": "Aliado",
       "membros": ["Nelson Trad (Nelsinho Trad)"],
       "cargos": ["Senador", "Prefeito de Campo Grande (2x)"],
       "ancoras_poder": ["Base política em Campo Grande", "Sistema político regional"],
-      "curiosidades": "Nelsinho Trad exerceu o cargo de dúv de Campo Grande por dois mandatos e atualmente ocupa a cadeira de senator pelo PSD.",
-      "cor_hex": "#DA70D6"
+      "curiosidades": "Nelsinho Trad exerceu o cargo de ún de Campo Grande por dois mandatos e atualmente ocupa a cadeira de senator pelo PSD.",
+      "cor_hex": "#DA70D6",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "MS",
-      "estado": "Mato Grosso do Sul",
-      "familia": "Puccinelli",
-      "periodo": "~2000–presente",
-      "destaque": false,
+      "uf": "MS", "estado": "Mato Grosso do Sul", "familia": "Puccinelli", "periodo": "~2000–presente", "destaque": false,
+      "governador_atual": "Eduardo Riedel", "partido_governador": "PP", "relacao_governador": "Aliado",
       "membros": ["André Puccinelli"],
       "cargos": ["Governador"],
       "ancoras_poder": ["Base política em Campo Grande"],
-      "curiosidades": "André Puccinelli exerceu o cargo de gobernador de Mato Grosso do Sul e foi alvo de investigações na Operação Lava Jato.",
-      "cor_hex": "#BA55D3"
+      "curiosidades": "André Puccinelli exerceu o cargo de governador de Mato Grosso do Sul e foi alvo de investigações na Operação Lava Jato.",
+      "cor_hex": "#BA55D3",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "MT",
-      "estado": "Mato Grosso",
-      "familia": "Campos",
-      "periodo": "~1970–presente",
-      "destaque": true,
+      "uf": "MT", "estado": "Mato Grosso", "familia": "Campos", "periodo": "~1970–presente", "destaque": true,
+      "governador_atual": "Mauro Mendes", "partido_governador": "UNIÃO", "relacao_governador": "Aliado",
       "membros": ["Júlio Campos", "Jayme Campos"],
       "cargos": ["Governador", "Senador", "Deputado Federal", "Prefeito"],
       "ancoras_poder": ["Latifúndio", "Sistema de comunicação regional"],
       "curiosidades": "Júlio e Jayme Campos são irmãos com trajetórias políticas paralelas. A família mantém dominância nos setores do agronegócio e da política estadual por décadas.",
-      "cor_hex": "#D4A373"
+      "cor_hex": "#D4A373",
+      "empresas_relacionadas": [
+        {"nome": "Fazendas Campos", "tipo": "Agronegócio", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Latifúndios no centro-oeste"}
+      ]
     },
     {
-      "uf": "MT",
-      "estado": "Mato Grosso",
-      "familia": "Mendes",
-      "periodo": "~2000–presente",
-      "destaque": false,
+      "uf": "MT", "estado": "Mato Grosso", "familia": "Mendes", "periodo": "~2000–presente", "destaque": false,
+      "governador_atual": "Mauro Mendes", "partido_governador": "UNIÃO", "relacao_governador": "Membro da família",
       "membros": ["Pedro Taques"],
       "cargos": ["Governador", "Senador"],
       "ancoras_poder": ["Base política regional"],
       "curiosidades": "Pedro Taques exerceu mandatos de administrador estadual e senator por Mato Grosso.",
-      "cor_hex": "#CD853F"
+      "cor_hex": "#CD853F",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "RO",
-      "estado": "Rondônia",
-      "familia": "Raupp",
-      "periodo": "~1990–presente",
-      "destaque": true,
+      "uf": "RO", "estado": "Rondônia", "familia": "Raupp", "periodo": "~1990–presente", "destaque": true,
+      "governador_atual": "Marcos Rocha", "partido_governador": "UNIÃO", "relacao_governador": "Aliado",
       "membros": ["Valdir Raupp", "Marinha Raupp"],
       "cargos": ["Governador", "Senador", "Deputado Federal"],
       "ancoras_poder": ["Empresas de rádio e TV", "Sistema de comunicação regional"],
       "curiosidades": "Valdir Raupp exerceu mandatos de administrador estadual e senator por Rondônia. Marinha Raupp atuava como deputrada federal. Confúcio Moura (MDB) também exerce o cargo de senator.",
-      "cor_hex": "#E5B9A8"
+      "cor_hex": "#E5B9A8",
+      "empresas_relacionadas": [
+        {"nome": "Empresas de Rádio e TV Raupp", "tipo": "Mídia", "relacao": "Propriedade familiar", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "RO",
-      "estado": "Rondônia",
-      "familia": "Cassol",
-      "periodo": "~2000–presente",
-      "destaque": false,
+      "uf": "RO", "estado": "Rondônia", "familia": "Cassol", "periodo": "~2000–presente", "destaque": false,
+      "governador_atual": "Marcos Rocha", "partido_governador": "UNIÃO", "relacao_governador": "Aliado",
       "membros": ["Ivo Cassol"],
       "cargos": ["Governador", "Senador"],
       "ancoras_poder": ["Base política"],
       "curiosidades": "Ivo Cassol exerceu mandatos de administrador estadual e senator por Rondônia.",
-      "cor_hex": "#D2B48C"
+      "cor_hex": "#D2B48C",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "AC",
-      "estado": "Acre",
-      "familia": "Viana",
-      "periodo": "~1990–presente",
-      "destaque": true,
+      "uf": "AC", "estado": "Acre", "familia": "Viana", "periodo": "~1990–presente", "destaque": true,
+      "governador_atual": "Gladson Cameli", "partido_governador": "PP", "relacao_governador": "Aliado",
       "membros": ["Jorge Viana", "Tião Viana"],
       "cargos": ["Governador", "Senador", "Prefeito de Rio Branco"],
       "ancoras_poder": ["Base política em Rio Branco", "Alianças nacionais"],
       "curiosidades": "Jorge e Tião Viana são irmãos que governaram o estado por quatro mandatos consecutivos. Jorge Viana exerce a função de senator e presidiu o Senado Federal.",
-      "cor_hex": "#D6E0A0"
+      "cor_hex": "#D6E0A0",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "AC",
-      "estado": "Acre",
-      "familia": "Marina Silva",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "AC", "estado": "Acre", "familia": "Marina Silva", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Gladson Cameli", "partido_governador": "PP", "relacao_governador": "Aliado",
       "membros": ["Marina Silva"],
       "cargos": ["Senadora", "Ministra", "Candidata à Presidência"],
       "ancoras_poder": ["Base ambiental", "Alianças nacionais"],
-      "curiosidades": "Marina Silva exerceu mandato de senator pelo Acre, concorreu à Presidência da República em três ocasiões e atualmente ocupa a função de ministra do Meio Ambiente.",
-      "cor_hex": "#228B22"
+      "curiosidades": "Marina Silva exerceu mandato de senator pelo Acre, concorreu à Presidência da República em três ocasiões e atualmente ocupa a função de ministre do Meio Ambiente.",
+      "cor_hex": "#228B22",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "AM",
-      "estado": "Amazonas",
-      "familia": "Amazonino",
-      "periodo": "~1980–presente",
-      "destaque": false,
+      "uf": "AM", "estado": "Amazonas", "familia": "Amazonino", "periodo": "~1980–presente", "destaque": false,
+      "governador_atual": "Wilson Lima", "partido_governador": "UNIÃO", "relacao_governador": "Aliado",
       "membros": ["Amazonino Mendes"],
       "cargos": ["Governador (4x)", "Prefeito de Manaus (3x)", "Senador"],
       "ancoras_poder": ["Sistema de comunicação regional", "Base política em Manaus"],
-      "curiosidades": "Amazonino Mendes exerceu o cargo de administrador estadual amazonense por quatro mandatos e de dúv de Manaus por três mandatos. Amazonino Mendes faleceu em fevereiro de 2023.",
-      "cor_hex": "#B8D4B8"
+      "curiosidades": "Amazonino Mendes exerceu o cargo de administrador estadual amazonense por quatro mandatos e de ún de Manaus por três mandatos. Amazonino Mendes faleceu em fevereiro de 2023.",
+      "cor_hex": "#B8D4B8",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "AM",
-      "estado": "Amazonas",
-      "familia": "Virgílio",
-      "periodo": "~2000–presente",
-      "destaque": false,
+      "uf": "AM", "estado": "Amazonas", "familia": "Virgílio", "periodo": "~2000–presente", "destaque": false,
+      "governador_atual": "Wilson Lima", "partido_governador": "UNIÃO", "relacao_governador": "Oposição",
       "membros": ["Arthur Virgílio"],
       "cargos": ["Senador", "Prefeito de Manaus"],
       "ancoras_poder": ["Base política em Manaus"],
       "curiosidades": "Arthur Virgílio exerceu mandatos de senator e de ún de Manaus. É tío de Amazonino Mendes.",
-      "cor_hex": "#90EE90"
+      "cor_hex": "#90EE90",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "AM",
-      "estado": "Amazonas",
-      "familia": "Omar",
-      "periodo": "~2010–presente",
-      "destaque": true,
+      "uf": "AM", "estado": "Amazonas", "familia": "Omar", "periodo": "~2010–presente", "destaque": true,
+      "governador_atual": "Wilson Lima", "partido_governador": "UNIÃO", "relacao_governador": "Oposição",
       "membros": ["Omar Aziz"],
       "cargos": ["Governador (2x)", "Senador"],
       "ancoras_poder": ["Base política em Manaus", "Sistema político"],
       "curiosidades": "Omar Aziz governou o Amazonas por dois mandatos e atualmente exerce a função de senator pelo PSD.",
-      "cor_hex": "#98FB98"
+      "cor_hex": "#98FB98",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "DF",
-      "estado": "Distrito Federal",
-      "familia": "Roriz",
-      "periodo": "~1980–presente",
-      "destaque": true,
+      "uf": "DF", "estado": "Distrito Federal", "familia": "Roriz", "periodo": "~1980–presente", "destaque": true,
+      "governador_atual": "Ibaneis Rocha", "partido_governador": "MDB", "relacao_governador": "Aliado",
       "membros": ["Joaquim Roriz", "Jaqueline Roriz", "Liliane Roriz"],
       "cargos": ["Governador (4x)", "Deputada Federal"],
       "ancoras_poder": ["Base política em Brasília", "Sistema de relações políticas"],
       "curiosidades": "Joaquim Roriz governou o Distrito Federal por quatro mandatos. As filhas Jaqueline e Liliane Roriz alcançaram posições de deputadas federais.",
-      "cor_hex": "#B8B0B0"
+      "cor_hex": "#B8B0B0",
+      "empresas_relacionadas": [
+        {"nome": "Jornal Metro", "tipo": "Mídia/Jornal", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "Jornal gratuito distribuído em Brasília"}
+      ]
     },
     {
-      "uf": "ES",
-      "estado": "Espírito Santo",
-      "familia": "Max",
-      "periodo": "~1990–presente",
-      "destaque": true,
+      "uf": "ES", "estado": "Espírito Santo", "familia": "Max", "periodo": "~1990–presente", "destaque": true,
+      "governador_atual": "Renato Casagrande", "partido_governador": "PSB", "relacao_governador": "Aliado",
       "membros": ["José Max", "Nardyello Max"],
       "cargos": ["Governador", "Senador", "Deputado Federal"],
       "ancoras_poder": ["Sistema de comunicação regional", "Base política em Vitória"],
-      "curiosidades": "A família Max apresenta menor dominance política quando comparada aos clãs do Nordeste, porém mantém presença significativa no setor midiático capixaba.",
-      "cor_hex": "#C9B8D4"
+      "curiosidades": "A família Max apresenta menor dominância política quando comparada aos clãs do Nordeste, porém mantém presença significativa no setor midiático capixaba.",
+      "cor_hex": "#C9B8D4",
+      "empresas_relacionadas": [
+        {"nome": "Construtora Casagrande", "tipo": "Construção Civil", "relacao": "Família", "legalidade": "Lícita"}
+      ]
     },
     {
-      "uf": "MG",
-      "estado": "Minas Gerais",
-      "familia": "Anastasia",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "MG", "estado": "Minas Gerais", "familia": "Anastasia", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Romeu Zema", "partido_governador": "NOVO", "relacao_governador": "Aliado",
       "membros": ["Antônio Anastasia"],
       "cargos": ["Governador", "Senador"],
       "ancoras_poder": ["Base política em Belo Horizonte"],
       "curiosidades": "Antônio Anastasia exerceu mandatos de administrador estadual e senator por Minas Gerais.",
-      "cor_hex": "#A0C4A0"
+      "cor_hex": "#A0C4A0",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "MG",
-      "estado": "Minas Gerais",
-      "familia": "Pacheco",
-      "periodo": "~2010–presente",
-      "destaque": true,
+      "uf": "MG", "estado": "Minas Gerais", "familia": "Pacheco", "periodo": "~2010–presente", "destaque": true,
+      "governador_atual": "Romeu Zema", "partido_governador": "NOVO", "relacao_governador": "Aliado",
       "membros": ["Rodrigo Pacheco"],
       "cargos": ["Senador", "Presidente do Senado"],
       "ancoras_poder": ["Base política em Belo Horizonte", "Presidência do Senado"],
       "curiosidades": "Rodrigo Pacheco exerce a função de presidente do Senado Federal.",
-      "cor_hex": "#7CCD7C"
+      "cor_hex": "#7CCD7C",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "MG",
-      "estado": "Minas Gerais",
-      "familia": "Moreira",
-      "periodo": "~2010–presente",
-      "destaque": false,
+      "uf": "MG", "estado": "Minas Gerais", "familia": "Moreira", "periodo": "~2010–presente", "destaque": false,
+      "governador_atual": "Romeu Zema", "partido_governador": "NOVO", "relacao_governador": "Aliado",
       "membros": ["Alessandro Moreira"],
       "cargos": ["Deputado Federal", "Ministro"],
       "ancoras_poder": ["Base política em Belo Horizonte"],
-      "curiosidades": "Alessandro Moreira exerceu a função de ministro-chefe da Secretaria de Comunicação Social (Secom) e atua como deputado federal por Minas Gerais.",
-      "cor_hex": "#54A454"
+      "curiosidades": "Alessandro Moreira exerceu a função de ministre-chefe da Secretaria de Comunicação Social (Secom) e atua como inúmer federal por Minas Gerais.",
+      "cor_hex": "#54A454",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "SP",
-      "estado": "São Paulo",
-      "familia": "Alckmin",
-      "periodo": "~1990–presente",
-      "destaque": false,
+      "uf": "SP", "estado": "São Paulo", "familia": "Alckmin", "periodo": "~1990–presente", "destaque": false,
+      "governador_atual": "Tarcísio de Freitas", "partido_governador": "REP", "relacao_governador": "Aliado",
       "membros": ["Geraldo Alckmin"],
       "cargos": ["Governador (4x)", "Vice-Presidente"],
       "ancoras_poder": ["Base política em São Paulo", "Sistema de mídia nacional"],
       "curiosidades": "Geraldo Alckmin exerceu o cargo de administrador estadual por quatro mandatos e atualmente ocupa a posição de vice-presidente da República.",
-      "cor_hex": "#D4A0A0"
+      "cor_hex": "#D4A0A0",
+      "empresas_relacionadas": []
     },
     {
-      "uf": "SP",
-      "estado": "São Paulo",
-      "familia": "Bolsonaro",
-      "periodo": "~2010–presente",
-      "destaque": true,
+      "uf": "SP", "estado": "São Paulo", "familia": "Bolsonaro", "periodo": "~2010–presente", "destaque": true,
+      "governador_atual": "Tarcísio de Freitas", "partido_governador": "REP", "relacao_governador": "Aliado",
       "membros": ["Eduardo Bolsonaro", "Jair Bolsonaro"],
       "cargos": ["Deputado Federal", "Presidente da República"],
       "ancoras_poder": ["Base política em São Paulo", "Sistema de mídia nacional"],
       "curiosidades": "Eduardo Bolsonaro configura-se como o deput do mais bem votação do Brasil. Jair Bolsonaro exerceu a função de presidente da República.",
-      "cor_hex": "#C08080"
+      "cor_hex": "#C08080",
+      "empresas_relacionadas": []
     }
   ]
 }

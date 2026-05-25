@@ -1,4 +1,4 @@
-import { loadFamiliasData, getClansMap, getConfig } from './data.js';
+import { loadFamiliasData, getClansMap, getGovernadoresMap, getConfig } from './data.js';
 
 export async function initBrazilMap() {
   const [geoResponse, familiasData] = await Promise.all([
@@ -8,6 +8,7 @@ export async function initBrazilMap() {
   
   const geoData = geoResponse;
   const clansMap = getClansMap();
+  const governadoresMap = getGovernadoresMap();
   const config = getConfig();
 
   const container = document.getElementById('map-container');
@@ -49,9 +50,11 @@ export async function initBrazilMap() {
       const uf = d.properties.sigla || d.properties.UF;
       const nome = d.properties.nome || d.properties.name || uf;
       const grupos = clansMap[uf] || [];
-      if (grupos.length === 0) return nome;
+      const gov = governadoresMap[uf];
+      if (grupos.length === 0) return gov ? `${nome} - Governador: ${gov.nome}` : nome;
       const destaques = grupos.filter(g => g.destaque).map(g => g.familia);
-      return destaques.length > 0 ? `${nome}: ${destaques.join(', ')}` : nome;
+      const govInfo = gov ? ` | Gov: ${gov.nome}` : '';
+      return destaques.length > 0 ? `${nome}: ${destaques.join(', ')}${govInfo}` : `${nome}${govInfo}`;
     });
 
   svg.append('g')
@@ -93,7 +96,8 @@ function handleClick(event, d) {
     detail: {
       uf,
       nomeEstado,
-      grupos: window.clansMap?.[uf] || []
+      grupos: window.clansMap?.[uf] || [],
+      gobernador: window.governadoresMap?.[uf] || null
     }
   }));
 }

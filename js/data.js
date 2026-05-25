@@ -1,5 +1,6 @@
 let familiasData = null;
 let clansMap = {};
+let governadoresMap = {};
 
 export async function loadFamiliasData() {
   if (familiasData) return familiasData;
@@ -8,12 +9,20 @@ export async function loadFamiliasData() {
   familiasData = await response.json();
   
   clansMap = {};
+  governadoresMap = {};
+  
   familiasData.familias.forEach(f => {
     if (!clansMap[f.uf]) {
       clansMap[f.uf] = [];
     }
     clansMap[f.uf].push(f);
   });
+  
+  if (familiasData.governadores_atuais) {
+    familiasData.governadores_atuais.forEach(g => {
+      governadoresMap[g.uf] = g;
+    });
+  }
   
   return familiasData;
 }
@@ -24,6 +33,10 @@ export function getClansByUF(uf) {
 
 export function getClansMap() {
   return clansMap;
+}
+
+export function getGovernadoresMap() {
+  return governadoresMap;
 }
 
 export function getConfig() {

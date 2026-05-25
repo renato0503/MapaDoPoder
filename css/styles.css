@@ -278,6 +278,135 @@ main {
   line-height: 1.2;
 }
 
+#governador-info {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+.governador-badge {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.governador-nome {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.governador-partido {
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+#empresas-section {
+  display: none;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+#empresas-section h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 12px 0;
+}
+
+.empresa-card {
+  background: #f9fafb;
+  border-left: 3px solid;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.empresa-card:hover {
+  transform: translateX(4px);
+}
+
+.empresa-card.licita {
+  border-left-color: #10b981;
+}
+
+.empresa-card.ilícita,
+.empresa-card.ilicitainvestigação {
+  border-left-color: #ef4444;
+  background: #fef2f2;
+}
+
+.empresa-card.investigada {
+  border-left-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.empresa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.empresa-nome {
+  font-weight: 600;
+  color: #111827;
+  font-size: 14px;
+}
+
+.empresa-tipo {
+  font-size: 11px;
+  color: #6b7280;
+  display: inline-block;
+  background: #e5e7eb;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.empresa-detalhes {
+  font-size: 12px;
+  color: #4b5563;
+  margin: 6px 0;
+  line-height: 1.5;
+}
+
+.empresa-faturamento {
+  font-size: 12px;
+  color: #059669;
+  font-weight: 600;
+  margin: 4px 0 0 0;
+}
+
+.empresa-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.tag-licita {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.tag-ilícita,
+.tag-ilicitainvestigação {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tag-investigada {
+  background: #fef3c7;
+  color: #92400e;
+}
+
 @media (max-width: 960px) {
   main {
     grid-template-columns: 1fr;

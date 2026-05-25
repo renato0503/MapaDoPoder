@@ -1,4 +1,4 @@
-import { loadFamiliasData, getClansMap } from './data.js';
+import { loadFamiliasData, getClansMap, getGovernadoresMap } from './data.js';
 import { initBrazilMap } from './map.js';
 
 const infoPanel = document.getElementById('info-panel');
@@ -57,7 +57,55 @@ function renderFamilyPhotos(membros, familia) {
   });
 }
 
-function atualizarPainel({ uf, nomeEstado, grupos }) {
+function renderGovernadorInfo(governador) {
+  const container = document.getElementById('governador-info');
+  if (!container) return;
+  
+  if (!governador) {
+    container.innerHTML = '';
+    container.style.display = 'none';
+    return;
+  }
+  
+  container.innerHTML = `
+    <div class="governador-badge">
+      <span class="governador-nome">👤 ${governador.nome}</span>
+      <span class="governador-partido">${governador.partido} | ${governador.mandato}</span>
+    </div>
+  `;
+  container.style.display = 'block';
+}
+
+function renderEmpresas(empresas) {
+  const container = document.getElementById('empresas-section');
+  if (!container) return;
+  
+  if (!empresas || empresas.length === 0) {
+    container.innerHTML = '';
+    container.style.display = 'none';
+    return;
+  }
+  
+  const html = `
+    <h4>🏢 Empresas Relacionadas (${empresas.length})</h4>
+    ${empresas.map(emp => `
+      <div class="empresa-card ${emp.legalidade.toLowerCase().replace(/[^a-z]/g, '')}">
+        <div class="empresa-header">
+          <span class="empresa-nome">${emp.nome}</span>
+          <span class="empresa-tag tag-${emp.legalidade.toLowerCase().replace(/[^a-z]/g, '')}">${emp.legalidade}</span>
+        </div>
+        <span class="empresa-tipo">${emp.tipo}</span>
+        ${emp.detalhes ? `<p class="empresa-detalhes">${emp.detalhes}</p>` : ''}
+        ${emp.faturamento_anual ? `<p class="empresa-faturamento">💰 ${emp.faturamento_anual}</p>` : ''}
+      </div>
+    `).join('')}
+  `;
+  
+  container.innerHTML = html;
+  container.style.display = 'block';
+}
+
+function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
   currentClans = grupos;
   
   if (grupos.length === 0) {
@@ -71,6 +119,8 @@ function atualizarPainel({ uf, nomeEstado, grupos }) {
     familiaCor.style.backgroundColor = '#d1d5db';
     clansList.innerHTML = '';
     document.getElementById('family-photos').innerHTML = '';
+    renderGovernadorInfo(null);
+    renderEmpresas([]);
     infoPanel.classList.add('active');
     return;
   }
@@ -88,6 +138,8 @@ function atualizarPainel({ uf, nomeEstado, grupos }) {
   familiaCuriosidades.textContent = destaque.curiosidades;
   
   renderFamilyPhotos(destaque.membros, destaque.familia);
+  renderGovernadorInfo(governador);
+  renderEmpresas(destaque.empresas_relacionadas || []);
   
   if (grupos.length > 1) {
     clansList.innerHTML = '<h4>Outros clãs neste estado:</h4>' + 
@@ -111,6 +163,7 @@ function atualizarPainel({ uf, nomeEstado, grupos }) {
           familiaAncoras.innerHTML = selectedClan.ancoras_poder.map(a => `<span class="anchor-tag">${a}</span>`).join('');
           familiaCuriosidades.textContent = selectedClan.curiosidades;
           renderFamilyPhotos(selectedClan.membros, selectedClan.familia);
+          renderEmpresas(selectedClan.empresas_relacionadas || []);
         }
       });
     });
@@ -148,6 +201,7 @@ window.addEventListener('familiaSelected', (e) => {
 
 window.addEventListener('mapLoaded', (e) => {
   window.clansMap = getClansMap();
+  window.governadoresMap = getGovernadoresMap();
   gerarLegenda(e.detail.familiasData);
 });
 
