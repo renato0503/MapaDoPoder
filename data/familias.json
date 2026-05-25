@@ -427,7 +427,8 @@
           "relacao": "Propriedade familiar",
           "legalidade": "Lícita",
           "detalhes": "Afiliada Globo, fundada em 1987. Controlada por Fernando Sarney (filho)",
-          "faturamento_anual": "R$ 150 milhões (estimado)"
+          "faturamento_anual": "R$ 150 milhões (estimado)",
+          "escandalos": ["Escândalo dos Atos Secretos (2009): 500+ boletins administrativos ocultos para nepotismo", "Caso Lunus (2002): R$ 1,3 milhão apreendido em dinheiro vivo no escritório de Roseana Sarney"]
         },
         {
           "nome": "Fazendas Sarney",
@@ -448,7 +449,8 @@
           "tipo": "Empreiteira/Oleaginosa",
           "relacao": "Doações e repasses ilícitos via Lava Jato",
           "legalidade": "Investigada",
-          "detalhes": "Citadas em delações da Lava Jato como repasses ilícitos ao clã"
+          "detalhes": "Citadas em delações da Lava Jato como repasses ilícitos ao clã",
+          "escandalos": ["Citadas em delações da Lava Jato como repasses ilícitos ao clã"]
         }
       ]
     },
@@ -480,7 +482,8 @@
           "nome": "PMR Táxi Aéreo",
           "tipo": "Aéreo",
           "relacao": "Ligada a familiares e campanhas",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Operação Asfixia/Pegadores (2017): esquema de funcionários fantasmas na Secretaria de Saúde"]
         },
         {
           "nome": "Rio Parnaíba Participações",
@@ -520,13 +523,15 @@
           "nome": "Transpetro",
           "tipo": "Petrobras",
           "relacao": "Contratos investigados na Lava Jato",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Operação Lava Jato (2014): propinas milionárias nas obras da Usina de Belo Monte"]
         },
         {
           "nome": "Estaleiro Rio Tietê",
           "tipo": "Construção Naval",
           "relacao": "Propinas milionárias para Edison Lobão",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Propinas milionárias para Edison Lobão e filho"]
         }
       ]
     },
@@ -560,14 +565,16 @@
           "tipo": "Mídia/TV",
           "relacao": "Propriedade familiar",
           "legalidade": "Investigada",
-          "detalhes": "TV Gazeta de Alagoas. Recuperação judicial e investigações de lavagem de dinheiro"
+          "detalhes": "TV Gazeta de Alagoas. Recuperação judicial e investigações de lavagem de dinheiro",
+          "escandalos": ["Esquema PC Farias (1992): levou ao impeachment por uso de contas fantasmas"]
         },
         {
           "nome": "BR Distribuidora",
           "tipo": "Combustível",
           "relacao": "Propinas em contratos de troca de bandeira",
           "legalidade": "Ilícita",
-          "detalhes": "Condenado pelo STF por propinas em contratos"
+          "detalhes": "Condenado pelo STF por propinas em contratos",
+          "escandalos": ["Condenado pelo STF na Lava Jato (2023) a 8 anos e 10 meses por receber R$ 20 milhões em propinas"]
         }
       ]
     },
@@ -612,13 +619,15 @@
           "tipo": "Agronegócio",
           "relacao": "Propriedade familiar",
           "legalidade": "Investigada",
-          "detalhes": "Citations em investigações de evolução patrimonial"
+          "detalhes": "Citations em investigações de evolução patrimonial",
+          "escandalos": ["Escândalo da Mendes Júnior (2007): pensão de filha paga por empreiteira via lobista"]
         },
         {
           "nome": "Agropecuária JR",
           "tipo": "Agronegócio",
           "relacao": "Familiares",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesmo escândalo da Mendes Júnior"]
         }
       ]
     },
@@ -652,13 +661,15 @@
           "tipo": "Fornecimento/Kits",
           "relacao": "Operada por aliados de Lira",
           "legalidade": "Ilícita",
-          "detalhes": "Alvo da Operação Hefesto - superfaturamento de kits de robótica via Orçamento Secreto"
+          "detalhes": "Alvo da Operação Hefesto - superfaturamento de kits de robótica via Orçamento Secreto",
+          "escandalos": ["Operação Hefesto (2023): superfaturamento na compra de kits de robótica via Orçamento Secreto"]
         },
         {
           "nome": "D'Lira Agronegócios",
           "tipo": "Agronegócio",
           "relacao": "Propriedade familiar",
-          "legalidade": "Lícita"
+          "legalidade": "Lícita",
+          "escandalos": ["Operação Taturana (2007): desvio de R$ 300 milhões da Assembleia de AL"]
         }
       ]
     },
@@ -695,14 +706,16 @@
           "tipo": "Gráfica/Fornecimento",
           "relacao": "Fornecedor de material didático",
           "legalidade": "Investigada",
-          "detalhes": "Operação Calvário - triangulação de recursos eleitorais"
+          "detalhes": "Operação Calvário - triangulação de recursos eleitorais",
+          "escandalos": ["Escândalo da FAC (2008): 35 mil cheques de dinheiro público distribuídos em período eleitoral - cassado pelo TSE"]
         },
         {
           "nome": "Construtoras locais",
           "tipo": "Construção Civil",
           "relacao": "Casos históricos",
           "legalidade": "Investigada",
-          "detalhes": "Caso Hovercraft"
+          "detalhes": "Caso Hovercraft",
+          "escandalos": ["Operação Calvário (2018): desvio na Saúde e Educação via OSs"]
         }
       ]
     },
@@ -778,7 +791,8 @@
           "relacao": "Propriedade familiar",
           "legalidade": "Lícita",
           "detalhes": "Afiliada Band, 42 retransmissoras, 80% do território paraense",
-          "faturamento_anual": "R$ 80 milhões (estimado)"
+          "faturamento_anual": "R$ 80 milhões (estimado)",
+          "escandalos": ["Escândalo da Sudam (2001): projetos fantasmas de R$ 1 bi"]
         },
         {
           "nome": "Rádio Clube do Pará",
@@ -798,7 +812,8 @@
           "tipo": "Construção Civil",
           "relacao": "Familiares",
           "legalidade": "Investigada",
-          "detalhes": "Empresas com contratos públicos"
+          "detalhes": "Empresas com contratos públicos",
+          "escandalos": ["Mesmo escândalo da Sudam"]
         },
         {
           "nome": "Fazendas Barbalho",
@@ -811,7 +826,8 @@
           "tipo": "Equipamentos Médicos",
           "relacao": "Compra de respiradores pandêmicos",
           "legalidade": "Ilícita",
-          "detalhes": "Operação da PF durante pandemia"
+          "detalhes": "Operação da PF durante pandemia",
+          "escandalos": ["Operação Bellum (2020): compra fraudulenta de respiradores na pandemia"]
         },
         {
           "nome": "Agropecuária Rio Branco",
@@ -891,20 +907,23 @@
           "relacao": "Propriedade familiar",
           "legalidade": "Lícita",
           "detalhes": "6 emissoras afiliadas Globo",
-          "faturamento_anual": "R$ 200 milhões (estimado)"
+          "faturamento_anual": "R$ 200 milhões (estimado)",
+          "escandalos": ["Escândalo do Painel Eletrônico (2001): violação para saber votos dos colegas"]
         },
         {
           "nome": "Odebrecht",
           "tipo": "Empreiteira",
           "relacao": "Repasses ao clã",
           "legalidade": "Investigada",
-          "detalhes": "Codinome Grampinho na planilha do Setor de Operações Estruturadas"
+          "detalhes": "Codinome Grampinho na planilha do Setor de Operações Estruturadas",
+          "escandalos": ["Codinome Grampinho na Lava Jato para ACM Neto"]
         },
         {
           "nome": "Construtora OAS",
           "tipo": "Empreiteira",
           "relacao": "Repasses ao clã",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Repasses ao clã nas obras em Salvador"]
         }
       ]
     },
@@ -941,14 +960,16 @@
           "tipo": "Agronegócio",
           "relacao": "Propriedade familiar",
           "legalidade": "Lícita",
-          "detalhes": "Centenas de milhares de hectares"
+          "detalhes": "Centenas de milhares de hectares",
+          "escandalos": ["Operação Monte Carlo: mesma base do bicheiro Carlinhos Cachoeira"]
         },
         {
           "nome": "Delta Construção",
           "tipo": "Construção Civil",
           "relacao": "Operação Monte Carlo",
           "legalidade": "Investigada",
-          "detalhes": "Envolvida no esquema do bicheiro Carlinhos Cachoeira"
+          "detalhes": "Envolvida no esquema do bicheiro Carlinhos Cachoeira",
+          "escandalos": ["Investigado no mesmo esquema de Cachoeira"]
         }
       ]
     },
@@ -990,20 +1011,23 @@
           "tipo": "Alimentação",
           "relacao": "Lavagem de dinheiro (Rachadinha)",
           "legalidade": "Ilícita",
-          "detalhes": "Investigado pelo MP-RJ como instrumento de lavagem"
+          "detalhes": "Investigado pelo MP-RJ como instrumento de lavagem",
+          "escandalos": ["Escândalo das Rachadinhas (2018): R$ 1,2 milhão em movimentações atípicas de Queiroz"]
         },
         {
           "nome": "Vivendas da Barra",
           "tipo": "Imobiliário",
           "relacao": "Compra e venda de imóveis",
           "legalidade": "Investigada",
-          "detalhes": "Subfaturamento em cartórios para lavagem"
+          "detalhes": "Subfaturamento em cartórios para lavagem",
+          "escandalos": ["Compra e venda de imóveis sob suspeita de lavagem"]
         },
         {
           "nome": "França siblings / Ricardo Snacks",
           "tipo": "Alimentação",
           "relacao": "Vinculadas a rachadinha",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesmo esquema de rachadinha"]
         }
       ]
     },
@@ -1036,13 +1060,15 @@
           "tipo": "Serviços Terceirizados",
           "relacao": "Operação Chequinho",
           "legalidade": "Ilícita",
-          "detalhes": "Compra de votos e caixa 2 em Campos dos Goytacazes"
+          "detalhes": "Compra de votos e caixa 2 em Campos dos Goytacazes",
+          "escandalos": ["Operação Chequinho (2016): compra de votos com programa social"]
         },
         {
           "nome": "Construtora Delta",
           "tipo": "Construção Civil",
           "relacao": "Investigada",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesma operação de compra de votos"]
         }
       ]
     },
@@ -1073,13 +1099,15 @@
           "tipo": "Empreiteira",
           "relacao": "Codinome Nervosinho",
           "legalidade": "Investigada",
-          "detalhes": "Obras olímpicas e Porto Maravilha"
+          "detalhes": "Obras olímpicas e Porto Maravilha",
+          "escandalos": ["Caso Nervosinho: R$ 15 milhões em caixa 2 nas Olimpíadas"]
         },
         {
           "nome": "Consórcio Porto Maravilha",
           "tipo": "Infraestrutura",
           "relacao": "Investigado",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesmas investigações de propinas"]
         }
       ]
     },
@@ -1112,14 +1140,16 @@
           "nome": "Macapá Telecomunicações",
           "tipo": "Telecomunicações",
           "relacao": "Negócios familiares",
-          "legalidade": "Lícita"
+          "legalidade": "Lícita",
+          "escandalos": ["Escândalo da Rachadinha (2021): 6 ex-assessoras como funcionárias fantasmas"]
         },
         {
           "nome": "Empresas de Consultoria",
           "tipo": "Consultoria",
           "relacao": "Rachadinha em gabinete",
           "legalidade": "Ilícita",
-          "detalhes": "Funcionários fantasmas devolvendo salários"
+          "detalhes": "Funcionários fantasmas devolvendo salários",
+          "escandalos": ["Mesma investigação de rachadinha"]
         }
       ]
     },
@@ -1152,7 +1182,8 @@
           "nome": "TV Imperial",
           "tipo": "Mídia/TV",
           "relacao": "Controle familiar",
-          "legalidade": "Lícita"
+          "legalidade": "Lícita",
+          "escandalos": ["Flagrado em áudio dizendo ser necessário 'pacto nacional' para estancar a Lava Jato"]
         },
         {
           "nome": "TV Caburaí",
@@ -1164,13 +1195,15 @@
           "nome": "Odebrecht",
           "tipo": "Empreiteira",
           "relacao": "Articulação política no Senado",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Réu por corrupção na edição de MPs para beneficiar a empreiteira"]
         },
         {
           "nome": "Andrade Gutierrez",
           "tipo": "Empreiteira",
           "relacao": "Articulação política no Senado",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesma investigação de MPs"]
         }
       ]
     },
@@ -1206,7 +1239,8 @@
           "tipo": "Mídia/TV",
           "relacao": "Propriedade familiar",
           "legalidade": "Lícita",
-          "detalhes": "Afiliada Record desde 2006. Controlada por Walter Franco (filho) e Augusto Franco Neto (neto)"
+          "detalhes": "Afiliada Record desde 2006. Controlada por Walter Franco (filho) e Augusto Franco Neto (neto)",
+          "escandalos": ["Escândalo das Subvenções (2014): desvio de verbas para ONGs fantasmas"]
         },
         {
           "nome": "TV Sergipe",
@@ -1269,13 +1303,15 @@
           "tipo": "Imobiliário/Shopping",
           "relacao": "Propriedade de Tasso Jereissati",
           "legalidade": "Lícita",
-          "detalhes": "Gigante do setor imobiliário e shopping centers"
+          "detalhes": "Gigante do setor imobiliário e shopping centers",
+          "escandalos": ["Citado nas planilhas da Lava Jato com codinome Aviático por caixa 2"]
         },
         {
           "nome": "Telemar / Oi",
           "tipo": "Telecomunicações",
           "relacao": "Participação histórica na privatização",
-          "legalidade": "Lícita"
+          "legalidade": "Lícita",
+          "escandalos": ["Participação histórica na privatização das telecomunicações"]
         }
       ]
     },
@@ -1330,7 +1366,8 @@
           "tipo": "Infraestrutura",
           "relacao": "Gestao do Anel de Integracao",
           "legalidade": "Investigada",
-          "detalhes": "Operacao Integracao - propinas a governos anteriores"
+          "detalhes": "Operacao Integracao - propinas a governos anteriores",
+          "escandalos": ["Operação Quadro Negro (2015): aliados presos por desvios de R$ 20 milhões em escolas"]
         }
       ]
     },
@@ -1364,7 +1401,8 @@
           "tipo": "Construção Civil",
           "relacao": "Investigada em pavimentação",
           "legalidade": "Investigada",
-          "detalhes": "Operação Tarja Preta - fraudes licitatórias"
+          "detalhes": "Operação Tarja Preta - fraudes licitatórias",
+          "escandalos": ["Operação Ápia (2016): fraude de R$ 1,2 bi em licitações de pavimentação"]
         }
       ]
     },
@@ -1399,14 +1437,16 @@
           "tipo": "Mídia/TV",
           "relacao": "Propriedade familiar",
           "legalidade": "Lícita",
-          "detalhes": "Afiliada Record"
+          "detalhes": "Afiliada Record",
+          "escandalos": ["Operação Lavat (2017): prisão de Henrique Eduardo Alves por desvios na Arena das Dunas"]
         },
         {
           "nome": "Carioca Engenharia",
           "tipo": "Construção Civil",
           "relacao": "Desvios na Arena das Dunas",
           "legalidade": "Investigada",
-          "detalhes": "Prisão de Henrique Eduardo Alves"
+          "detalhes": "Prisão de Henrique Eduardo Alves",
+          "escandalos": ["Desvios na construção da Arena das Dunas"]
         }
       ]
     },
@@ -1440,7 +1480,8 @@
           "nome": "Rádio Cabugi",
           "tipo": "Mídia/Rádio",
           "relacao": "Propriedade",
-          "legalidade": "Lícita"
+          "legalidade": "Lícita",
+          "escandalos": ["Operação Ouro Negro / Máfia dos Sanguessugas (2006): venda superfaturada de ambulâncias"]
         }
       ]
     },
@@ -1520,13 +1561,15 @@
           "tipo": "Construção Civil",
           "relacao": "Repasses de propinas",
           "legalidade": "Investigada",
-          "detalhes": "Operação Turbulência - Transposição do São Francisco"
+          "detalhes": "Operação Turbulência - Transposição do São Francisco",
+          "escandalos": ["Operação Turbulência: propinas na Transposição do Rio São Francisco"]
         },
         {
           "nome": "Construtora Barbosa Mello",
           "tipo": "Construção Civil",
           "relacao": "Repasses de propinas",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesmo esquema de propinas na Transposição"]
         },
         {
           "nome": "Fazendas de Fruticultura",
@@ -1567,7 +1610,8 @@
           "tipo": "Agronegócio",
           "relacao": "Propriedade do senador",
           "legalidade": "Investigada",
-          "detalhes": "Busca e apreensão na Lava Jato"
+          "detalhes": "Busca e apreensão na Lava Jato",
+          "escandalos": ["Operação Compensação (2018): R$ 43 milhões em propinas do Grupo J&F"]
         }
       ]
     },
@@ -1599,13 +1643,15 @@
           "nome": "Postos de Combustível",
           "tipo": "Combustível",
           "relacao": "Registrado em nome de familiares",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesma investigação da Compensação"]
         },
         {
           "nome": "UTC Engenharia",
           "tipo": "Empreiteira",
           "relacao": "Repasses suspeitos a Ciro Nogueira",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Propinas a Ciro Nogueira"]
         }
       ]
     },
@@ -1638,13 +1684,15 @@
           "tipo": "Transporte Escolar",
           "relacao": "Contratos públicos",
           "legalidade": "Investigada",
-          "detalhes": "Operação Topique - desvios na educação"
+          "detalhes": "Operação Topique - desvios na educação",
+          "escandalos": ["Operação Topique (2018): R$ 50 milhões desviados do Fundeb via transporte escolar"]
         },
         {
           "nome": "Empresas de Tecnologia",
           "tipo": "Tech",
           "relacao": "Contratos educacionais",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesma operação de desvios na educação"]
         }
       ]
     },
@@ -1674,7 +1722,8 @@
           "nome": "Sindicatos de Metalurgicos",
           "tipo": "Sindical",
           "relacao": "Financiamento de candidaturas",
-          "legalidade": "Licita"
+          "legalidade": "Licita",
+          "escandalos": ["Investigado no Escândalo dos Sanguessugas, mas absolvido por falta de provas"]
         },
         {
           "nome": "Cooperativas de Credito",
@@ -1739,7 +1788,8 @@
           "tipo": "Construcao Civil",
           "relacao": "Direcionamento de licitacoes",
           "legalidade": "Investigada",
-          "detalhes": "Escandalos historicos de pontes e estradas"
+          "detalhes": "Escandalos historicos de pontes e estradas",
+          "escandalos": ["Escândalo dos Precatórios (1997): milhões em Letras do Tesouro Estadual irregulares"]
         }
       ]
     },
@@ -1781,7 +1831,8 @@
           "tipo": "Alimentos/Carnes",
           "relacao": "Denúncia por notas fiscais falsas",
           "legalidade": "Ilícita",
-          "detalhes": "R$ 67 milhões em propinas via incentivos fiscais"
+          "detalhes": "R$ 67 milhões em propinas via incentivos fiscais",
+          "escandalos": ["Operação Vostok (2018): R$ 67 milhões em propinas via isenções fiscais"]
         }
       ]
     },
@@ -1840,7 +1891,8 @@
           "tipo": "Construção Civil",
           "relacao": "Operação Coffee Break",
           "legalidade": "Investigada",
-          "detalhes": "CPI dos Ônibus - concessões de transporte"
+          "detalhes": "CPI dos Ônibus - concessões de transporte",
+          "escandalos": ["Operação Coffee Break (2015): compra de vereadores para cassar prefeito"]
         }
       ]
     },
@@ -1870,13 +1922,15 @@
           "tipo": "Construção Civil",
           "relacao": "Operação Lama Asfáltica",
           "legalidade": "Ilícita",
-          "detalhes": "Propinas para o clã via fazendas e contas ocultas"
+          "detalhes": "Propinas para o clã via fazendas e contas ocultas",
+          "escandalos": ["Operação Lama Asfáltica (2015): R$ 400 milhões em fraudes"]
         },
         {
           "nome": "João Amorim",
           "tipo": "Empreiteiro",
           "relacao": "Braço executor das fraudes",
-          "legalidade": "Ilícita"
+          "legalidade": "Ilícita",
+          "escandalos": ["Braço executor do esquema de propinas"]
         }
       ]
     },
@@ -1910,13 +1964,15 @@
           "nome": "Agropecuaria Rio Deserto",
           "tipo": "Agronegocio",
           "relacao": "Propriedade familiar",
-          "legalidade": "Licita"
+          "legalidade": "Licita",
+          "escandalos": ["Operação Ararath (2014): 'banco clandestino' financiando campanhas"]
         },
         {
           "nome": "Grupo Santa Laura",
           "tipo": "Agronegocio",
           "relacao": "Colonizacao de terras",
-          "legalidade": "Licita"
+          "legalidade": "Licita",
+          "escandalos": ["Mesma operação de lavagem de dinheiro"]
         }
       ]
     },
@@ -1947,13 +2003,198 @@
           "tipo": "Energia",
           "relacao": "Recuperacao judicial",
           "legalidade": "Investigada",
-          "detalhes": "Engenharia eletrica e infraestrutura"
+          "detalhes": "Engenharia eletrica e infraestrutura",
+          "escandalos": ["Investigação no TRT-MT: esquema de fraudes em leilões para comprar sentenças"]
         },
         {
           "nome": "Mavi Engenharia",
           "tipo": "Construcao Civil",
           "relacao": "Recuperacao judicial",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesma investigação"]
+        }
+      ]
+    },
+    {
+      "uf": "MT",
+      "estado": "Mato Grosso",
+      "familia": "Maggi",
+      "periodo": "~1990–presente",
+      "destaque": true,
+      "governador_atual": "Mauro Mendes",
+      "partido_governador": "UNIÃO",
+      "relacao_governador": "Aliado",
+      "membros": [
+        "Blairo Maggi",
+        "Lúcia Maggi",
+        "André Maggi (fundador)"
+      ],
+      "cargos": [
+        "Governador",
+        "Senador",
+        "Ministro da Agricultura"
+      ],
+      "ancoras_poder": [
+        "Grupo Amaggi (maior trading de soja do mundo)",
+        "Infraestrutura logística (terminais portuários e navegação fluvial)",
+        "Latifúndio no norte do estado"
+      ],
+      "curiosidades": "O 'Império da Soja' - Blairo Maggi foi o alvo central da Operação Ararath (2014), acusado de participar de um esquema de compra de vaga no TCE-MT e utilizar um 'banco clandestino' para financiar campanhas.",
+      "cor_hex": "#228B22",
+      "empresas_relacionadas": [
+        {
+          "nome": "Grupo Amaggi",
+          "tipo": "Trading de Commodities",
+          "relacao": "Propriedade familiar",
+          "legalidade": "Lícita",
+          "detalhes": "Uma das maiores tradings de soja, milho e algodão do mundo",
+          "escandalos": ["Operação Ararath (2014): financiamento de campanhas via 'banco clandestino'"]
+        },
+        {
+          "nome": "Terminal Portuário de São Francisco",
+          "tipo": "Infraestrutura/Logística",
+          "relacao": "Controlado pelo grupo",
+          "legalidade": "Lícita",
+          "escandalos": ["Operação Ararath: ligações com esquema de financiamento ilícito"]
+        }
+      ]
+    },
+    {
+      "uf": "MT",
+      "estado": "Mato Grosso",
+      "familia": "Riva",
+      "periodo": "~1990–2020",
+      "destaque": false,
+      "governador_atual": "Mauro Mendes",
+      "partido_governador": "UNIÃO",
+      "relacao_governador": "Oposição",
+      "membros": [
+        "José Riva",
+        "Janaina Riva"
+      ],
+      "cargos": [
+        "Deputado Estadual",
+        "President da ALMT"
+      ],
+      "ancoras_poder": [
+        "Controle burocrático da Assembleia Legislativa",
+        "Base eleitoral em Juara e Vale do Arinos"
+      ],
+      "curiosidades": "José Riva é conhecido como o 'maior ficha-suja do país' devido ao número de processos. Firmou delação которую confessou ter distribuído dezenas de milhões em propinas ('mensalinho') para deputados.",
+      "cor_hex": "#8B0000",
+      "empresas_relacionadas": [
+        {
+          "nome": "Escritório de Advocacia/Relações Públicas",
+          "tipo": "Serviços",
+          "relacao": "Operações via terceiros",
+          "legalidade": "Ilícita",
+          "escandalos": ["Operação Metástase e Ararath: prisão e delação premiada", "'Mensalinho': distribuição de dezenas de milhões em propinas na ALMT"]
+        }
+      ]
+    },
+    {
+      "uf": "MT",
+      "estado": "Mato Grosso",
+      "familia": "Bezerra",
+      "periodo": "~1980–presente",
+      "destaque": false,
+      "governador_atual": "Mauro Mendes",
+      "partido_governador": "UNIÃO",
+      "relacao_governador": "MDB rival",
+      "membros": [
+        "Carlos Bezerra",
+        "Teté Bezerra"
+      ],
+      "cargos": [
+        "Governador",
+        "Senador",
+        "Deputado Federal"
+      ],
+      "ancoras_poder": [
+        "Máquina partidária do MDB em MT",
+        "Influência no Incra e regularização fundiária"
+      ],
+      "curiosidades": "Carlos Bezerra é o cacique histórico do MDB em Mato Grosso, com décadas de domínio na política estadual.",
+      "cor_hex": "#FF8C00",
+      "empresas_relacionadas": [
+        {
+          "nome": "Construtora Bezerra",
+          "tipo": "Construção Civil",
+          "relacao": "Ligada à família",
+          "legalidade": "Investigada",
+          "escandalos": ["Operação Ararath: financiamento de campanhas via esquema ilícito", "Bens bloqueados por irregularidades em fundações públicas"]
+        }
+      ]
+    },
+    {
+      "uf": "MT",
+      "estado": "Mato Grosso",
+      "familia": "Brunetto / Guaporé",
+      "periodo": "~1980–presente",
+      "destaque": false,
+      "governador_atual": "Mauro Mendes",
+      "partido_governador": "UNIÃO",
+      "relacao_governador": "Aliado",
+      "membros": [
+        "Ademir Brunetto"
+      ],
+      "cargos": [
+        "Deputado Estadual"
+      ],
+      "ancoras_poder": [
+        "Setor madeireiro",
+        "Sindicatos rurais",
+        "Terras na divisa com Pará"
+      ],
+      "curiosidades": "Família de colonizadores do norte de MT, originários da exploração madeireira e depois conversão para pecuária e lavoura.",
+      "cor_hex": "#654321",
+      "empresas_relacionadas": [
+        {
+          "nome": "Madeireiras da Amazônia",
+          "tipo": "Madeira/Exploração Florestal",
+          "relacao": "Propriedade familiar",
+          "legalidade": "Investigada",
+          "escandalos": ["Conflitos agrários e investigações do Ibama/ PF sobre desmatamento ilegal", "Fraudes no sistema de guias florestais (Sisflora)"]
+        }
+      ]
+    },
+    {
+      "uf": "MT",
+      "estado": "Mato Grosso",
+      "familia": "Borges / Maluf",
+      "periodo": "~1990–presente",
+      "destaque": false,
+      "governador_atual": "Mauro Mendes",
+      "partido_governador": "UNIÃO",
+      "relacao_governador": "Aliado",
+      "membros": [
+        "Guilherme Maluf"
+      ],
+      "cargos": [
+        "Conselheiro do TCE-MT",
+        "Deputado Estadual"
+      ],
+      "ancoras_poder": [
+        "Setor de saúde privada (hospitais)",
+        "Empreendimentos imobiliários",
+        "Cadeiras estratégicas em tribunais de contas"
+      ],
+      "curiosidades": "Representantes da 'aristocracia cuiabana' com forte inserção nos bastidores do Judiciário e Ministério Público.",
+      "cor_hex": "#4B0082",
+      "empresas_relacionadas": [
+        {
+          "nome": "Hospital Ortocity / Empreendimentos de Saúde",
+          "tipo": "Saúde",
+          "relacao": "Ligado à família",
+          "legalidade": "Lícita",
+          "escandalos": ["Operação Rêmora (2016): fraudes em licitações da Seduc"]
+        },
+        {
+          "nome": "Empreendimentos Imobiliários Maluf",
+          "tipo": "Imobiliário",
+          "relacao": "Propriedade familiar",
+          "legalidade": "Investigada",
+          "escandalos": ["Operação Rêmora: acusação de liderança do núcleo político do esquema de propinas"]
         }
       ]
     },
@@ -1986,13 +2227,15 @@
           "nome": "Geraes Construtora",
           "tipo": "Construção Civil",
           "relacao": "Investigada",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Condenado a 7 anos pelo STF por R$ 500 mil da Queiroz Galvão na Petrobras"]
         },
         {
           "nome": "Calcário Rondônia",
           "tipo": "Mineração",
           "relacao": "Ligada a Valdir Raupp",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Mesma condenação"]
         }
       ]
     },
@@ -2023,7 +2266,8 @@
           "tipo": "Construção Civil",
           "relacao": "Fraudes em licitações",
           "legalidade": "Ilícita",
-          "detalhes": "Condenação no STF por fraudes"
+          "detalhes": "Condenação no STF por fraudes",
+          "escandalos": ["Primeiro senator condenado pelo STF à prisão desde 1988 por corrupção eleitoral"]
         }
       ]
     },
@@ -2057,7 +2301,8 @@
           "tipo": "Construção Civil",
           "relacao": "Operação G7",
           "legalidade": "Investigada",
-          "detalhes": "Cartel de empreiteiras fraudando licitações"
+          "detalhes": "Cartel de empreiteiras fraudando licitações",
+          "escandalos": ["Operação G7 (2013): cartel de empreiteiras fraudando licitações"]
         }
       ]
     },
@@ -2169,13 +2414,15 @@
           "tipo": "Saúde/OMS",
           "relacao": "Desvio de R$ 100 milhões",
           "legalidade": "Ilícita",
-          "detalhes": "Operação Maus Caminhos - contratos da saúde"
+          "detalhes": "Operação Maus Caminhos - contratos da saúde",
+          "escandalos": ["Operação Maus Caminhos (2016): R$ 260 milhões desviados do Fundo Estadual de Saúde"]
         },
         {
           "nome": "Consórcio Gasoduto Coari-Manaus",
           "tipo": "Energia",
           "relacao": "Eduardo Braga citado",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Desvio de R$ 260 milhões na saúde"]
         }
       ]
     },
@@ -2209,14 +2456,16 @@
           "tipo": "Financeiro",
           "relacao": "Operações irregulares",
           "legalidade": "Investigada",
-          "detalhes": "Escândalo da Bezerra de Ouro"
+          "detalhes": "Escândalo da Bezerra de Ouro",
+          "escandalos": ["Escândalo da Bezerra de Ouro (2007): R$ 2,2 milhões empropina disfarçada de compra de bezerra"]
         },
         {
           "nome": "Grupo Comporte / Constantino",
           "tipo": "Transporte",
           "relacao": "Escândalo de inúmer",
           "legalidade": "Investigada",
-          "detalhes": "Propina em renovação de frotas de ônibus"
+          "detalhes": "Propina em renovação de frotas de ônibus",
+          "escandalos": ["Mesma investigação"]
         }
       ]
     },
@@ -2250,7 +2499,8 @@
           "tipo": "Construcao/Saneamento",
           "relacao": "Contratos municipais em Vila Velha",
           "legalidade": "Investigada",
-          "detalhes": "Relacoes institucionais com prefeitura"
+          "detalhes": "Relacoes institucionais com prefeitura",
+          "escandalos": ["Operação Moeda de Troca: R$ 600 mil da Odebrebcht, mas inquéritos arquivados"]
         }
       ]
     },
@@ -2281,7 +2531,8 @@
           "tipo": "Empreiteira",
           "relacao": "Caixa 2 para campanha 2010",
           "legalidade": "Investigada",
-          "detalhes": "Caso posteriormente arquivado"
+          "detalhes": "Caso posteriormente arquivado",
+          "escandalos": ["Acusado de caixa 2, mas inquérito foi arquivado por falta de provas"]
         }
       ]
     },
@@ -2313,7 +2564,8 @@
           "tipo": "Transporte",
           "relacao": "Propriedade familiar",
           "legalidade": "Licita",
-          "detalhes": "Transporte interestadual e intermunicipal"
+          "detalhes": "Transporte interestadual e intermunicipal",
+          "escandalos": ["Envolvido no esquema das Emendas de Relator (Orçamento Secreto)"]
         }
       ]
     },
@@ -2343,14 +2595,16 @@
           "nome": "Radio Arco-Iris",
           "tipo": "Midia/Radio",
           "relacao": "Propriedade da familia",
-          "legalidade": "Investigada"
+          "legalidade": "Investigada",
+          "escandalos": ["Delação da JBS (2017): pediu R$ 2 milhões a Joesley Batista"]
         },
         {
           "nome": "JBS S.A.",
           "tipo": "Alimentos/Carnes",
           "relacao": "R$ 2 milhoes solicitados a Joesley Batista",
           "legalidade": "Ilícita",
-          "detalhes": "Entregas em especie rastreadas"
+          "detalhes": "Entregas em especie rastreadas",
+          "escandalos": ["Entrega de dinheiro em malas filmada pela PF"]
         }
       ]
     },
@@ -2382,7 +2636,8 @@
           "tipo": "Empreiteira/Concessionaria",
           "relacao": "Caixa 2 para campanhas",
           "legalidade": "Investigada",
-          "detalhes": "Codinome Belem - R$ 11,3 milhoes para campanha ao governo"
+          "detalhes": "Codinome Belem - R$ 11,3 milhoes para campanha ao governo",
+          "escandalos": ["Denunciado por R$ 11,3 milhões em caixa 2 (codinomes Santo e Belém)"]
         }
       ]
     },
