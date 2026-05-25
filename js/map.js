@@ -1,33 +1,39 @@
 import { loadFamiliasData, getClansMap, getGovernadoresMap, getConfig } from './data.js';
 
 const partyColors = {
-  'PP': '#f97316',
-  'MDB': '#006647',
-  'UNIÃO': '#a1111d',
-  'PSB': '#ed1414',
   'PT': '#c41230',
-  'PSD': '#f6b026',
-  'PL': '#00a859',
-  'PSDB': '#0085c8',
-  'NOVO': '#f5b71c',
-  'REP': '#cb0d0d',
-  'Cidadania': '#77b3e4',
-  'Republicanos': '#6ebaf8',
-  'DEM': '#2e7eb9',
+  'PSB': '#ed1414',
+  'PCdoB': '#d20000',
   'PV': '#009a44',
   'Rede': '#008b9a',
   'Solidariedade': '#26c9ff',
-  'Avante': '#3d7eaa',
-  'PODE': '#d0d000',
-  'Patriota': '#1f8f2d',
-  'PMN': '#edd400',
-  'PROS': '#0066a2',
+  'PSOL': '#dd1144',
+  'PCB': '#990000',
+  'UP': '#8b0000',
+  
+  'MDB': '#e65c00',
+  'PSD': '#f6b026',
+  'PP': '#f97316',
+  'PROS': '#ff8c00',
+  'MDB': '#cc4400',
+  'Cidadania': '#ffaa00',
+  
+  'PL': '#0055a4',
+  'UNIÃO': '#1e3a5f',
+  'Republicans': '#003366',
   'PSL': '#1f4962',
-  'DC': '#7ab8e5'
+  'DEM': '#2e7eb9',
+  'NOVO': '#1e4d8c',
+  'PODE': '#1a3a6b',
+  'Patriota': '#0d2b4a',
+  'DC': '#1a4a7a',
+  'Avante': '#2a5a8a',
+  'PMN': '#cc9900',
+  'PROS': '#0066a2'
 };
 
 function getPartyColor(partido) {
-  return partyColors[partido] || '#1a1a2e';
+  return partyColors[partido] || '#888888';
 }
 
 export { getPartyColor };

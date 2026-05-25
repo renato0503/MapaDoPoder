@@ -148,11 +148,10 @@ function atualizarPainel({ uf, nomeEstado, grupos, gov }) {
   renderEmpresas(allEmpresas);
   
   if (grupos.length > 1) {
-    clansList.innerHTML = '<h4>🏛️ Clãs do Estado:</h4>' + 
+    clansList.innerHTML = '<h4>🏛️ Ver outros clãs:</h4>' + 
       grupos.map(g => `
         <div class="clan-mini" data-uf="${uf}" data-familia="${g.familia}" style="border-left: 4px solid ${g.cor_hex}">
-          <strong>${g.familia}</strong><br>
-          <small>${g.membros.slice(0, 2).join(', ')}</small>
+          <strong>${g.familia}</strong>
         </div>
       `).join('');
     
@@ -162,13 +161,13 @@ function atualizarPainel({ uf, nomeEstado, grupos, gov }) {
         const selectedClan = grupos.find(g => g.familia === familiaName);
         if (selectedClan) {
           familiaNome.textContent = selectedClan.familia;
-          familiaPeriodo.textContent = selectedClan.periodo;
+          familiaPeriodo.textContent = selectedClan.periodo || '';
           familiaCor.style.backgroundColor = selectedClan.cor_hex;
-          familiaMembros.innerHTML = selectedClan.membros.map(m => `<li>${m}</li>`).join('');
-          familiaCargos.textContent = selectedClan.cargos.join(', ');
-          familiaAncoras.innerHTML = selectedClan.ancoras_poder.map(a => `<span class="anchor-tag">${a}</span>`).join('');
-          familiaCuriosidades.textContent = selectedClan.curiosidades;
-          renderFamilyPhotos(selectedClan.membros, selectedClan.familia);
+          familiaMembros.innerHTML = selectedClan.membros?.map(m => `<li>${m}</li>`).join('') || '<li>Sem dados</li>';
+          familiaCargos.textContent = selectedClan.cargos?.join(', ') || '';
+          familiaAncoras.innerHTML = selectedClan.ancoras_poder?.map(a => `<span class="anchor-tag">${a}</span>`).join('') || '';
+          familiaCuriosidades.textContent = selectedClan.curiosidades || '';
+          renderFamilyPhotos(selectedClan.membros || [], selectedClan.familia || '');
           const clanEmpresas = [
             ...(selectedClan.empresas_relacionadas || []),
             ...(gov?.empresas_relacionadas || [])
@@ -212,7 +211,6 @@ window.addEventListener('familiaSelected', (e) => {
 window.addEventListener('mapLoaded', (e) => {
   window.clansMap = getClansMap();
   window.governadoresMap = getGovernadoresMap();
-  gerarLegenda(e.detail.familiasData);
 });
 
 closeBtn.addEventListener('click', () => {
