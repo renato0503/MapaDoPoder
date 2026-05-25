@@ -2,18 +2,17 @@
 
 ## Visão geral
 
-Este projeto é um infográfico interativo sobre clãs políticos brasileiros. A ideia central é usar HTML/CSS/JavaScript com D3.js e GeoJSON para criar um mapa do Brasil onde cada estado mostra as principais famílias políticas e suas informações regionais.
+Este projeto é um infográfico interativo sobre clãs políticos brasileiros. A ideia central é usar HTML/CSS/JavaScript com D3.js e GeoJSON para criar um mapa do Brasil onde cada estado mostra as principais famílias políticas, seus membros, conexões empresariais e o governador atual.
 
 ## Estrutura atual do projeto
 
 - `index.html` – página principal com mapa interativo
-- `css/styles.css` – estilos modernos para o mapa, painel lateral, legenda, fotos e layout responsivo
-- `js/data.js` – loader do JSON de famílias políticas com suporte a múltiplos clãs por estado
+- `css/styles.css` – estilos modernos para o mapa, painel lateral, legenda, fotos, empresas e layout responsivo
+- `js/data.js` – loader do JSON de famílias políticas com suporte a múltiplos clãs por estado e mapa de governadores
 - `js/map.js` – lógica para carregar o GeoJSON e desenhar o mapa do Brasil com D3.js
-- `js/ui.js` – interações do usuário, painel de detalhes, legenda dinâmica, suporte a múltiplos clãs e renderização de fotos
-- `js/imageService.js` – serviço para buscar fotos dos políticos via Wikipedia API
+- `js/ui.js` – interações do usuário, painel de detalhes, legenda dinâmica, suporte a múltiplos clãs, renderização de fotos e empresas
 - `data/br_states.geojson` – GeoJSON dos estados do Brasil para renderizar o mapa
-- `data/familias.json` – dados completos das famílias políticas (clãs de todos os 27 estados)
+- `data/familias.json` – dados completos das famílias políticas (clãs de todos os 27 estados), governadores atuais e empresas relacionadas
 - `data/photos/` – diretório com fotos dos políticos (quando disponíveis)
 - `.github/workflows/deploy.yml` – workflow do GitHub Actions para deploy automático no GitHub Pages
 - `README.md` – documenta a estrutura, como rodar localmente e como publicar no GitHub Pages
@@ -31,6 +30,7 @@ Arquivos do protótipo PWA original (manter para referência):
 - Labels dos estados com siglas
 - Efeitos de hover com sombra e stroke mais grosso
 - Clique para abrir painel de detalhes
+- Tooltip mostra nome do clã e do governador atual
 
 ### Dados de Famílias Políticas (clãs por estado)
 - **MA**: Sarney, Rocha, Lobão
@@ -71,10 +71,12 @@ Arquivos do protótipo PWA original (manter para referência):
 ### Painel Lateral
 - Exibição do estado selecionado
 - Nome da família/clã político em destaque
+- Badge do governador atual com partido e mandato
 - Período de atividade
 - Lista de membros com fotos circulares
 - Cargos ocupados
 - Âncoras do poder (TV, terra, tribunais, etc.)
+- Seção de empresas relacionadas com classificação (Lícita/Investigada/Ilícita)
 - Curiosidades sobre o clã
 - Lista de outros clãs do mesmo estado (quando aplicável)
 - Interação para trocar entre clãs do mesmo estado
@@ -94,6 +96,8 @@ Arquivos do protótipo PWA original (manter para referência):
 - Área para curiosidades em itálico
 - Botão de fechar painel
 - Estilos para galeria de fotos (`family-photos`, `photo-item`)
+- Badge do inúmerador com gradiente
+- Cards de empresas com bordas coloridas por status
 
 ### Deploy Automático
 - GitHub Actions configurado para deploy automático no GitHub Pages
@@ -118,6 +122,17 @@ Acesse `http://localhost:8000`.
 {
   "meta": { titulo, fonte, atualizado_em, nota },
   "config": { cor_padrao, cor_hover, tooltip_max_width, animacao_transicao_ms },
+  "governadores_atuais": [
+    {
+      "uf": "MA",
+      "nome": "Carlos Brandão",
+      "partido": "PSB",
+      "mandato": "2023-2026",
+      "vice": "Vanderlei Masson",
+      "familia_politica": "Aliado Sarney",
+      "empresas_relacionadas": []
+    }
+  ],
   "familias": [
     {
       "uf": "MA",
@@ -125,11 +140,24 @@ Acesse `http://localhost:8000`.
       "familia": "Sarney",
       "periodo": "1965–presente",
       "destaque": true,
+      "governador_atual": "Carlos Brandão",
+      "partido_governador": "PSB",
+      "relacao_governador": "Aliado político",
       "membros": ["José Sarney", "Roseana Sarney", ...],
       "cargos": ["Presidente da República", "Governador", ...],
       "ancoras_poder": ["Lei de Terras (1969)", "Sistema Mirante (TV/Rádio)", ...],
-      "curiosidades": "José Ribamar mudou o nome no cartório em 1965...",
-      "cor_hex": "#E41A1C"
+      "curiosidades": "José Ribamar alterou o nome civil em 1965...",
+      "cor_hex": "#E41A1C",
+      "empresas_relacionadas": [
+        {
+          "nome": "Sistema Mirante de Comunicação",
+          "tipo": "Mídia/TV/Rádio",
+          "relacao": "Propriedade familiar",
+          "legalidade": "Lícita",
+          "detalhes": "Afiliada Globo, fundada em 1987...",
+          "faturamento_anual": "R$ 150 milhões (estimado)"
+        }
+      ]
     }
   ]
 }
@@ -143,3 +171,5 @@ Acesse `http://localhost:8000`.
 - Cores são únicas por clã para facilitar identificação visual no mapa
 - Fotos são buscadas via Wikipedia API ou usam fallback SVG quando não disponíveis
 - O arquivo `escrita.md` contém o padrão de escrita acadêmica a ser seguido para textos descritivos
+- Governadores atuais são الذين mandato 2023-2026
+- Empresas relacionadas são classificadas como Lícita, Investigada ou Ilícita
