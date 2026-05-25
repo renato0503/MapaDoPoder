@@ -1,0 +1,62 @@
+[
+  {
+    "id": "sarney",
+    "name": "Sarney",
+    "summary": "Clã do Maranhão fundado por José Sarney, com forte controle de terras, mídia e cargos públicos.",
+    "base": "Maranhão"
+  },
+  {
+    "id": "collor",
+    "name": "Collor",
+    "summary": "Clã de Alagoas que elegeu Fernando Collor à presidência em 1989 e sofreu impeachment em 1992.",
+    "base": "Maceió, Alagoas"
+  },
+  {
+    "id": "calheiros",
+    "name": "Calheiros",
+    "summary": "Família de Murici que teve Renan Calheiros no Senado por décadas e Renan Filho como governador.",
+    "base": "Murici, Alagoas"
+  },
+  {
+    "id": "lira",
+    "name": "Lira",
+    "summary": "Clã de Barra de São Miguel que chegou à presidência da Câmara e acumulou emendas secretas.",
+    "base": "Barra de São Miguel, Alagoas"
+  },
+  {
+    "id": "cunha-lima",
+    "name": "Cunha Lima",
+    "summary": "Clã campinense da Paraíba com rivalidades marcantes e um histórico de governos estaduais.",
+    "base": "Campina Grande, Paraíba"
+  },
+  {
+    "id": "mota-vanderlei",
+    "name": "Mota Vanderlei",
+    "summary": "Clã de Patos que controla a prefeitura há décadas e alcançou a presidência da Câmara.",
+    "base": "Patos, Paraíba"
+  },
+  {
+    "id": "barbalho",
+    "name": "Barbalho",
+    "summary": "Clã do Pará com presença em governos estaduais, Senado e Tribunal de Contas.",
+    "base": "Belém, Pará"
+  },
+  {
+    "id": "acm",
+    "name": "ACM",
+    "summary": "Clã baiano fundado por Antônio Carlos Magalhães, controlou mídia e poder por décadas.",
+    "base": "Salvador, Bahia"
+  },
+  {
+    "id": "caiado",
+    "name": "Caiado",
+    "summary": "Clã rural de Goiás presente na política desde o século XVIII, com forte apoio do agronegócio.",
+    "base": "Goiás"
+  },
+  {
+    "id": "maia-garotinho",
+    "name": "Maia / Garotinho / Pisciane",
+    "summary": "Clã emergente do Rio de Janeiro que cresceu sem grandes propriedades rurais ou mídia local, mas com forte mobilização eleitoral.",
+    "base": "Rio de Janeiro"
+  }
+]

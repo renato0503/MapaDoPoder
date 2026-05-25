@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Famílias que Governam o Brasil</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🗳️ As Famílias que Governam o Brasil</h1>
+    <p>Clique em um estado para explorar as dinastias políticas e entenda como o poder se mantém no país.</p>
+  </header>
+
+  <main>
+    <section id="map-container"></section>
+
+    <aside id="info-panel" class="info-panel">
+      <button class="close-btn" aria-label="Fechar">×</button>
+      <h2 id="estado-nome">Escolha um estado</h2>
+      <div class="familia-card">
+        <div>
+          <span class="familia-cor" id="familia-cor"></span>
+          <h3 id="familia-nome">Nenhum clã selecionado</h3>
+        </div>
+        <p><strong>Período:</strong> <span id="familia-periodo">-</span></p>
+        <p><strong>Membros:</strong></p>
+        <ul id="familia-membros"><li>Selecione um estado no mapa.</li></ul>
+        <p><strong>Cargos:</strong> <span id="familia-cargos">-</span></p>
+      </div>
+      <div class="legend" id="legend"></div>
+    </aside>
+  </main>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script type="module" src="js/ui.js"></script>
+</body>
+</html>

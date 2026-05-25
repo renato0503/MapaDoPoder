@@ -1,0 +1,58 @@
+[
+  {
+    "code": "MA",
+    "name": "Maranhão",
+    "description": "Casa do clã Sarney e de sua influência sobre terra, mídia e nomes de logradouros.",
+    "clans": ["sarney"],
+    "cities": ["São Luís", "Presidente Sarney", "Bom Jardim"],
+    "details": "O Maranhão abriga o clã Sarney, que usa terras públicas, mídia e homenagens na paisagem urbana para manter poder político e institucional."
+  },
+  {
+    "code": "AL",
+    "name": "Alagoas",
+    "description": "Pequeno estado com três clãs nacionais: Collor, Calheiros e Lira.",
+    "clans": ["collor", "calheiros", "lira"],
+    "cities": ["Maceió", "Murici", "Barra de São Miguel"],
+    "details": "Alagoas é um laboratório do clã moderno: um presidente, um senador que presidiu o Senado e um deputado que presidiu a Câmara."
+  },
+  {
+    "code": "PB",
+    "name": "Paraíba",
+    "description": "Dois clãs distintos: Cunha Lima em Campina Grande e Mota Vanderlei em Patos.",
+    "clans": ["cunha-lima", "mota-vanderlei"],
+    "cities": ["Campina Grande", "Patos", "João Pessoa"],
+    "details": "A Paraíba mostra tanto o coronelismo político tradicional quanto o clã moderno baseado em prefeituras e repasses federais."
+  },
+  {
+    "code": "PA",
+    "name": "Pará",
+    "description": "O clã Barbalho domina Belém e ocupa cargos no Tribunal de Contas e no governo estadual.",
+    "clans": ["barbalho"],
+    "cities": ["Belém", "Santarém", "Marabá"],
+    "details": "No Pará, o poder Barbalho estende-se de cargos eleitorais a desembargadores e conselheiros de tribunais de contas."
+  },
+  {
+    "code": "BA",
+    "name": "Bahia",
+    "description": "Lar do carlismo comandado por ACM e sua rede de mídia Rede Bahia.",
+    "clans": ["acm"],
+    "cities": ["Salvador", "Feira de Santana", "Vitória da Conquista"],
+    "details": "A Bahia apresenta um modelo de clã apoiado em emissoras de TV e controle midiático junto ao poder político."
+  },
+  {
+    "code": "GO",
+    "name": "Goiás",
+    "description": "O clã Caiado atua há mais de dois séculos, com raízes no agronegócio e na política rural.",
+    "clans": ["caiado"],
+    "cities": ["Goiânia", "Anápolis", "Caldas Novas"],
+    "details": "Os Caiados mostram como um sobrenome rural se moderniza e segue relevante no poder estadual e nacional."
+  },
+  {
+    "code": "RJ",
+    "name": "Rio de Janeiro",
+    "description": "Clã emergente de Maia, Garotinho e Pisciane, construindo poder em tempo real.",
+    "clans": ["maia-garotinho"],
+    "cities": ["Rio de Janeiro", "Niterói", "Campos dos Goytacazes"],
+    "details": "No Rio, aparece um clã recente que não depende de terra ou emissora local para crescer."
+  }
+]
