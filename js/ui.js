@@ -142,7 +142,7 @@ function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
   renderGovernadorInfo(governador);
   const allEmpresas = [
     ...(destaque.empresas_relacionadas || []),
-    ...(gobernador?.empresas_relacionadas || [])
+    ...(governador?.empresas_relacionadas || [])
   ];
   renderEmpresas(allEmpresas);
   
