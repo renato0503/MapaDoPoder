@@ -106,7 +106,7 @@ function renderEmpresas(empresas) {
   container.style.display = 'block';
 }
 
-function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
+function atualizarPainel({ uf, nomeEstado, grupos, gov }) {
   currentClans = grupos;
   
   if (grupos.length === 0) {
@@ -125,13 +125,13 @@ function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
     infoPanel.classList.add('active');
     return;
   }
-
-estadoNome.textContent = nomeEstado;
+  
+  estadoNome.textContent = nomeEstado;
   
   const destaque = grupos.find(g => g.destaque) || grupos[0];
   
-  const partidoCor = governador ? getPartyColor(governador.partido) : destaque.cor_hex;
-  familiaNome.textContent = gobernador ? `${governador.nome}` : destaque.familia;
+  const partidoCor = gov ? getPartyColor(gov.partido) : destaque.cor_hex;
+  familiaNome.textContent = gov ? `${gov.nome}` : destaque.familia;
   familiaPeriodo.textContent = destaque.periodo || '';
   familiaCor.style.backgroundColor = partidoCor;
   familiaMembros.innerHTML = destaque.membros?.map(m => `<li>${m}</li>`).join('') || '<li>Sem dados</li>';
@@ -139,11 +139,11 @@ estadoNome.textContent = nomeEstado;
   familiaAncoras.innerHTML = destaque.ancoras_poder?.map(a => `<span class="anchor-tag">${a}</span>`).join('') || '';
   familiaCuriosidades.textContent = destaque.curiosidades || '';
   
-  renderFamilyPhotos(highlight?.membros || [], highlight?.familia || '');
-  renderGovernadorInfo(governador);
+  renderFamilyPhotos(destaque?.membros || [], destaque?.familia || '');
+  renderGovernadorInfo(gov);
   const allEmpresas = [
-    ...(highlight?.empresas_relacionadas || []),
-    ...(governador?.empresas_relacionadas || [])
+    ...(destaque?.empresas_relacionadas || []),
+    ...(gov?.empresas_relacionadas || [])
   ];
   renderEmpresas(allEmpresas);
   
@@ -171,7 +171,7 @@ estadoNome.textContent = nomeEstado;
           renderFamilyPhotos(selectedClan.membros, selectedClan.familia);
           const clanEmpresas = [
             ...(selectedClan.empresas_relacionadas || []),
-            ...(governador?.empresas_relacionadas || [])
+            ...(gov?.empresas_relacionadas || [])
           ];
           renderEmpresas(clanEmpresas);
         }
