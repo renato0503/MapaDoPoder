@@ -119,18 +119,30 @@ function renderGovernadorMarkers(svg, geoData, governadoresMap, path) {
     
     const marker = markersGroup.append('g')
       .attr('class', 'governador-marker')
-      .attr('transform', `translate(${x}, ${y})`)
-      .attr('data-uf', uf)
-      .on('click', (event) => {
-        event.stopPropagation();
-        const nomeEstado = d.properties.nome || d.properties.name || uf;
-        window.dispatchEvent(new CustomEvent('familiaSelected', {
-          detail: {
-            uf,
-            nomeEstado,
-            grupos: window.clansMap?.[uf] || [],
-            gobernador: window.governadoresMap?.[uf] || null
-          }
+      .attr('transform', `translate(${x}, ${y})`);
+    
+    marker.append('circle')
+      .attr('r', 10)
+      .attr('cx', 0)
+      .attr('cy', 0)
+      .attr('fill', getPartyColor(gov.partido))
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 1.5);
+    
+    marker.append('text')
+      .attr('x', 0)
+      .attr('y', 4)
+      .text(gov.partido.substring(0, 3))
+      .attr('fill', '#fff')
+      .attr('font-size', '8px')
+      .attr('font-weight', '700')
+      .attr('text-anchor', 'middle')
+      .attr('pointer-events', 'none');
+    
+    marker.append('title')
+      .text(`Gov ${gov.nome} (${gov.partido})`);
+  });
+}
         }));
       });
     
