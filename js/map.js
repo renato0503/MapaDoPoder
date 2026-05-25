@@ -143,30 +143,6 @@ function renderGovernadorMarkers(svg, geoData, governadoresMap, path) {
       .text(`Gov ${gov.nome} (${gov.partido})`);
   });
 }
-        }));
-      });
-    
-    marker.append('circle')
-      .attr('r', 10)
-      .attr('cx', 0)
-      .attr('cy', 0)
-      .attr('fill', getPartyColor(gov.partido))
-      .attr('stroke', '#fff')
-      .attr('stroke-width', 1.5);
-    
-    marker.append('text')
-      .attr('x', 0)
-      .attr('y', 4)
-      .text(gov.partido.substring(0, 3))
-      .attr('fill', '#fff')
-      .attr('font-size', '8px')
-      .attr('font-weight', '700')
-      .attr('text-anchor', 'middle');
-    
-    marker.append('title')
-      .text(`Gov ${gov.nome} (${gov.partido})`);
-  });
-}
 
 function renderEmpresaOrbits(svg, geoData, clansMap, governadoresMap, path) {
   const orbitsGroup = svg.append('g').attr('class', 'empresas-layer');
