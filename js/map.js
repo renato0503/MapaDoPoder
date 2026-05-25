@@ -1,8 +1,14 @@
-import { familiasPoliticas } from './data.js';
+import { loadFamiliasData, getClansMap, getConfig } from './data.js';
 
 export async function initBrazilMap() {
-  const response = await fetch('data/br_states.geojson');
-  const geoData = await response.json();
+  const [geoResponse, familiasData] = await Promise.all([
+    fetch('data/br_states.geojson').then(r => r.json()),
+    loadFamiliasData()
+  ]);
+  
+  const geoData = geoResponse;
+  const clansMap = getClansMap();
+  const config = getConfig();
 
   const container = document.getElementById('map-container');
   const width = 960;
@@ -25,10 +31,13 @@ export async function initBrazilMap() {
     .data(geoData.features)
     .join('path')
     .attr('d', path)
-    .attr('class', (d) => `state state-${d.properties.sigla || d.properties.uf}`)
+    .attr('class', (d) => `state state-${d.properties.sigla || d.properties.UF}`)
     .attr('fill', (d) => {
-      const sigla = d.properties.sigla || d.properties.uf;
-      return familiasPoliticas[sigla] ? familiasPoliticas[sigla].cor : '#f0f0f0';
+      const uf = d.properties.sigla || d.properties.UF;
+      const grupos = clansMap[uf] || [];
+      if (grupos.length === 0) return config.cor_padrao;
+      const destaque = grupos.find(g => g.destaque);
+      return destaque ? destaque.cor_hex : grupos[0].cor_hex;
     })
     .attr('stroke', '#333')
     .attr('stroke-width', 0.4)
@@ -36,7 +45,14 @@ export async function initBrazilMap() {
     .on('mouseout', handleOut)
     .on('click', handleClick)
     .append('title')
-    .text((d) => d.properties.nome || d.properties.name || d.properties.uf);
+    .text((d) => {
+      const uf = d.properties.sigla || d.properties.UF;
+      const nome = d.properties.nome || d.properties.name || uf;
+      const grupos = clansMap[uf] || [];
+      if (grupos.length === 0) return nome;
+      const destaques = grupos.filter(g => g.destaque).map(g => g.familia);
+      return destaques.length > 0 ? `${nome}: ${destaques.join(', ')}` : nome;
+    });
 
   svg.append('g')
     .selectAll('text')
@@ -46,10 +62,14 @@ export async function initBrazilMap() {
     .attr('y', (d) => path.centroid(d)[1])
     .attr('text-anchor', 'middle')
     .attr('class', 'state-label')
-    .text((d) => d.properties.sigla || d.properties.uf || '');
+    .text((d) => d.properties.sigla || d.properties.UF || '');
+
+  window.dispatchEvent(new CustomEvent('mapLoaded', {
+    detail: { familiasData }
+  }));
 }
 
-function handleHover(event) {
+function handleHover(event, d) {
   d3.select(this)
     .transition()
     .duration(150)
@@ -57,7 +77,7 @@ function handleHover(event) {
     .attr('filter', 'drop-shadow(2px 2px 3px rgba(0,0,0,0.2))');
 }
 
-function handleOut(event) {
+function handleOut(event, d) {
   d3.select(this)
     .transition()
     .duration(150)
@@ -66,14 +86,14 @@ function handleOut(event) {
 }
 
 function handleClick(event, d) {
-  const sigla = d.properties.sigla || d.properties.uf;
-  const dados = familiasPoliticas[sigla];
-
+  const uf = d.properties.sigla || d.properties.UF;
+  const nomeEstado = d.properties.nome || d.properties.name || uf;
+  
   window.dispatchEvent(new CustomEvent('familiaSelected', {
     detail: {
-      sigla,
-      nomeEstado: d.properties.nome || d.properties.name || sigla,
-      ...dados
+      uf,
+      nomeEstado,
+      grupos: window.clansMap?.[uf] || []
     }
   }));
 }
