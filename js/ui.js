@@ -16,6 +16,47 @@ const closeBtn = document.querySelector('.close-btn');
 
 let currentClans = [];
 
+const PHOTO_URLS = {
+  'Reinaldo Azambuja': 'data/photos/reinaldo_azambuja.jpg',
+  'Eduardo Riedel': 'data/photos/eduardo_riedel.jpg'
+};
+
+const GRAY_AVATAR = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%238a8a8a;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%235a5a5a;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='100' cy='100' r='100' fill='url(%23grad)'/%3E%3Ccircle cx='100' cy='70' r='35' fill='%23b0b0b0'/%3E%3Cellipse cx='100' cy='160' rx='55' ry='40' fill='%23b0b0b0'/%3E%3C/svg%3E`;
+
+function renderFamilyPhotos(membros, familia) {
+  const photoContainer = document.getElementById('family-photos');
+  if (!photoContainer) return;
+  
+  photoContainer.innerHTML = '';
+  
+  membros.forEach(membro => {
+    const photoWrapper = document.createElement('div');
+    photoWrapper.className = 'photo-item';
+    
+    const img = document.createElement('img');
+    const photoUrl = PHOTO_URLS[membro];
+    
+    if (photoUrl) {
+      img.src = photoUrl;
+      img.alt = membro;
+      img.onerror = () => {
+        img.src = GRAY_AVATAR;
+      };
+    } else {
+      img.src = GRAY_AVATAR;
+      img.alt = membro + ' (sem foto)';
+    }
+    
+    const name = document.createElement('span');
+    name.className = 'photo-name';
+    name.textContent = membro;
+    
+    photoWrapper.appendChild(img);
+    photoWrapper.appendChild(name);
+    photoContainer.appendChild(photoWrapper);
+  });
+}
+
 function atualizarPainel({ uf, nomeEstado, grupos }) {
   currentClans = grupos;
   
@@ -29,6 +70,7 @@ function atualizarPainel({ uf, nomeEstado, grupos }) {
     familiaCuriosidades.textContent = '';
     familiaCor.style.backgroundColor = '#d1d5db';
     clansList.innerHTML = '';
+    document.getElementById('family-photos').innerHTML = '';
     infoPanel.classList.add('active');
     return;
   }
@@ -44,6 +86,8 @@ function atualizarPainel({ uf, nomeEstado, grupos }) {
   familiaCargos.textContent = destaque.cargos.join(', ');
   familiaAncoras.innerHTML = destaque.ancoras_poder.map(a => `<span class="anchor-tag">${a}</span>`).join('');
   familiaCuriosidades.textContent = destaque.curiosidades;
+  
+  renderFamilyPhotos(destaque.membros, destaque.familia);
   
   if (grupos.length > 1) {
     clansList.innerHTML = '<h4>Outros clãs neste estado:</h4>' + 
@@ -66,6 +110,7 @@ function atualizarPainel({ uf, nomeEstado, grupos }) {
           familiaCargos.textContent = selectedClan.cargos.join(', ');
           familiaAncoras.innerHTML = selectedClan.ancoras_poder.map(a => `<span class="anchor-tag">${a}</span>`).join('');
           familiaCuriosidades.textContent = selectedClan.curiosidades;
+          renderFamilyPhotos(selectedClan.membros, selectedClan.familia);
         }
       });
     });

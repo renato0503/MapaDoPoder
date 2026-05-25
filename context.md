@@ -7,15 +7,18 @@ Este projeto é um infográfico interativo sobre clãs políticos brasileiros. A
 ## Estrutura atual do projeto
 
 - `index.html` – página principal com mapa interativo
-- `css/styles.css` – estilos modernos para o mapa, painel lateral, legenda e layout responsivo
+- `css/styles.css` – estilos modernos para o mapa, painel lateral, legenda, fotos e layout responsivo
 - `js/data.js` – loader do JSON de famílias políticas com suporte a múltiplos clãs por estado
 - `js/map.js` – lógica para carregar o GeoJSON e desenhar o mapa do Brasil com D3.js
-- `js/ui.js` – interações do usuário, painel de detalhes, legenda dinâmica e suporte a múltiplos clãs
+- `js/ui.js` – interações do usuário, painel de detalhes, legenda dinâmica, suporte a múltiplos clãs e renderização de fotos
+- `js/imageService.js` – serviço para buscar fotos dos políticos via Wikipedia API
 - `data/br_states.geojson` – GeoJSON dos estados do Brasil para renderizar o mapa
-- `data/familias.json` – dados completos das famílias políticas (30+ clãs de diversos estados)
+- `data/familias.json` – dados completos das famílias políticas (clãs de todos os 27 estados)
+- `data/photos/` – diretório com fotos dos políticos (quando disponíveis)
 - `.github/workflows/deploy.yml` – workflow do GitHub Actions para deploy automático no GitHub Pages
 - `README.md` – documenta a estrutura, como rodar localmente e como publicar no GitHub Pages
 - `transcricao_clas_poder_brasil.md` – transcrição completa do vídeo sobre clãs do poder no Brasil
+- `escrita.md` – guia de estilo de escrita acadêmica (padrão APA 7ª edição) para o conteúdo textual
 
 Arquivos do protótipo PWA original (manter para referência):
 - `app.js`, `manifest.json`, `service-worker.js`, `data/clans.json`, `data/states.json`
@@ -29,40 +32,47 @@ Arquivos do protótipo PWA original (manter para referência):
 - Efeitos de hover com sombra e stroke mais grosso
 - Clique para abrir painel de detalhes
 
-### Dados de Famílias Políticas (30+ clãs)
+### Dados de Famílias Políticas (clãs por estado)
 - **MA**: Sarney, Rocha, Lobão
 - **AL**: Collor de Mello, Calheiros, Lira
 - **PB**: Cunha Lima, Mota/Vanderley
 - **PA**: Barbalho, Lobão
 - **BA**: Magalhães (Carlismo)
 - **GO**: Caiado
-- **RJ**: Bolsonaro, Garotinho/Paes
+- **RJ**: Bolsonaro, Garotinho, Paes
 - **AP**: Alcolumbre
 - **RR**: Jucá
 - **SE**: Franco
-- **CE**: Jereissati/Queiroz
+- **CE**: Jereissati
 - **PR**: Ratinho (Massa)
 - **TO**: Siqueira Campos
-- **RN**: Maia/Alves/Rosado
+- **RN**: Maia, Alves, Rosado
 - **PE**: Coelho
-- **PI**: Portela/Nogueira
-- **RS**: Paim/Vargas
-- **SC**: Koch/Ames
-- **MS**: Tebet
-- **MT**: Campos/Mendes
-- **RO**: Hold/Aziz
-- **AC**: Vieira/Marina
-- **AM**: Amazonino/Omar
+- **PI**: Portela, Nogueira, Dias
+- **RS**: Paim, Vargas
+- **SC**: Amin
+- **MS**: Azambuja/Riedel, Tebet, Trad, Puccinelli
+- **MT**: Campos, Mendes
+- **RO**: Raupp, Cassol
+- **AC**: Viana, Marina Silva
+- **AM**: Amazonino, Virgílio, Omar
 - **DF**: Roriz
 - **ES**: Max
-- **MG**: Anastasia/Moreira/Pacheco
-- **SP**: Alckmin/Bolsonaro
+- **MG**: Anastasia, Pacheco, Moreira
+- **SP**: Alckmin, Bolsonaro
+
+### Sistema de Fotos dos Políticos
+- Implementação do `imageService.js` que busca fotos via Wikipedia API
+- Fallback para avatar genérico quando foto não disponível
+- Exibição de fotos circulares no painel lateral
+- Fotos hospedadas localmente em `data/photos/` quando baixadas
+- Nomes dos membros rotulados abaixo das fotos
 
 ### Painel Lateral
 - Exibição do estado selecionado
 - Nome da família/clã político em destaque
 - Período de atividade
-- Lista de membros
+- Lista de membros com fotos circulares
 - Cargos ocupados
 - Âncoras do poder (TV, terra, tribunais, etc.)
 - Curiosidades sobre o clã
@@ -83,6 +93,7 @@ Arquivos do protótipo PWA original (manter para referência):
 - Tags para âncoras do poder
 - Área para curiosidades em itálico
 - Botão de fechar painel
+- Estilos para galeria de fotos (`family-photos`, `photo-item`)
 
 ### Deploy Automático
 - GitHub Actions configurado para deploy automático no GitHub Pages
@@ -130,3 +141,5 @@ Acesse `http://localhost:8000`.
 - Um estado pode ter múltiplos clãs (ex: AL tem Collor, Calheiros e Lira)
 - Quando há múltiplos clãs, o painel permite alternar entre eles
 - Cores são únicas por clã para facilitar identificação visual no mapa
+- Fotos são buscadas via Wikipedia API ou usam fallback SVG quando não disponíveis
+- O arquivo `escrita.md` contém o padrão de escrita acadêmica a ser seguido para textos descritivos

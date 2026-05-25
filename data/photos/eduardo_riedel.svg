@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#7a9bb5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4a6b85;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="100" fill="url(#grad)"/>
+  <circle cx="100" cy="70" r="35" fill="#a0b5c5"/>
+  <ellipse cx="100" cy="160" rx="55" ry="40" fill="#a0b5c5"/>
+</svg>
