@@ -30,6 +30,8 @@ function getPartyColor(partido) {
   return partyColors[partido] || '#1a1a2e';
 }
 
+export { getPartyColor };
+
 export async function initBrazilMap() {
   const [geoResponse, familiasData] = await Promise.all([
     fetch('data/br_states.geojson').then(r => r.json()),
@@ -65,6 +67,8 @@ export async function initBrazilMap() {
     .attr('class', (d) => `state state-${d.properties.sigla || d.properties.UF}`)
     .attr('fill', (d) => {
       const uf = d.properties.sigla || d.properties.UF;
+      const gov = governadoresMap[uf];
+      if (gov) return getPartyColor(gov.partido);
       const grupos = clansMap[uf] || [];
       if (grupos.length === 0) return config.cor_padrao;
       const destaque = grupos.find(g => g.destaque);
@@ -79,12 +83,12 @@ export async function initBrazilMap() {
     .text((d) => {
       const uf = d.properties.sigla || d.properties.UF;
       const nome = d.properties.nome || d.properties.name || uf;
-      const grupos = clansMap[uf] || [];
       const gov = governadoresMap[uf];
-      if (grupos.length === 0) return gov ? `${nome} - Governador: ${gov.nome}` : nome;
+      if (gov) return `${nome}\n${gov.nome} (${gov.partido})`;
+      const grupos = clansMap[uf] || [];
+      if (grupos.length === 0) return nome;
       const destaques = grupos.filter(g => g.destaque).map(g => g.familia);
-      const govInfo = gov ? ` | Gov: ${gov.nome}` : '';
-      return destaques.length > 0 ? `${nome}: ${destaques.join(', ')}${govInfo}` : `${nome}${govInfo}`;
+      return destaques.length > 0 ? `${nome}: ${destaques.join(', ')}` : nome;
     });
 
   svg.append('g')

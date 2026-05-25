@@ -1,5 +1,5 @@
 import { loadFamiliasData, getClansMap, getGovernadoresMap } from './data.js';
-import { initBrazilMap } from './map.js';
+import { initBrazilMap, getPartyColor } from './map.js';
 
 const infoPanel = document.getElementById('info-panel');
 const estadoNome = document.getElementById('estado-nome');
@@ -126,32 +126,33 @@ function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
     return;
   }
 
-  estadoNome.textContent = nomeEstado;
+estadoNome.textContent = nomeEstado;
   
   const destaque = grupos.find(g => g.destaque) || grupos[0];
   
-  familiaNome.textContent = destaque.familia;
-  familiaPeriodo.textContent = destaque.periodo;
-  familiaCor.style.backgroundColor = destaque.cor_hex;
-  familiaMembros.innerHTML = destaque.membros.map(m => `<li>${m}</li>`).join('');
-  familiaCargos.textContent = destaque.cargos.join(', ');
-  familiaAncoras.innerHTML = destaque.ancoras_poder.map(a => `<span class="anchor-tag">${a}</span>`).join('');
-  familiaCuriosidades.textContent = destaque.curiosidades;
+  const partidoCor = governador ? getPartyColor(governador.partido) : destaque.cor_hex;
+  familiaNome.textContent = gobernador ? `${governador.nome}` : destaque.familia;
+  familiaPeriodo.textContent = destaque.periodo || '';
+  familiaCor.style.backgroundColor = partidoCor;
+  familiaMembros.innerHTML = destaque.membros?.map(m => `<li>${m}</li>`).join('') || '<li>Sem dados</li>';
+  familiaCargos.textContent = destaque.cargos?.join(', ') || '';
+  familiaAncoras.innerHTML = destaque.ancoras_poder?.map(a => `<span class="anchor-tag">${a}</span>`).join('') || '';
+  familiaCuriosidades.textContent = destaque.curiosidades || '';
   
-  renderFamilyPhotos(destaque.membros, destaque.familia);
+  renderFamilyPhotos(highlight?.membros || [], highlight?.familia || '');
   renderGovernadorInfo(governador);
   const allEmpresas = [
-    ...(destaque.empresas_relacionadas || []),
+    ...(highlight?.empresas_relacionadas || []),
     ...(governador?.empresas_relacionadas || [])
   ];
   renderEmpresas(allEmpresas);
   
   if (grupos.length > 1) {
-    clansList.innerHTML = '<h4>Outros clãs neste estado:</h4>' + 
-      grupos.filter(g => !g.destaque).map(g => `
+    clansList.innerHTML = '<h4>🏛️ Clãs do Estado:</h4>' + 
+      grupos.map(g => `
         <div class="clan-mini" data-uf="${uf}" data-familia="${g.familia}" style="border-left: 4px solid ${g.cor_hex}">
-          <strong>${g.familia}</strong> (${g.periodo})<br>
-          <small>${g.membros.slice(0, 3).join(', ')}</small>
+          <strong>${g.familia}</strong><br>
+          <small>${g.membros.slice(0, 2).join(', ')}</small>
         </div>
       `).join('');
     
