@@ -61,7 +61,7 @@ Arquivos do protótipo PWA original (manter para referência):
 - **AM**: Amazonino, Virgílio, Omar
 - **DF**: Roriz
 - **ES**: Max
-- **MG**: Anastasia, Pacheco, Moreirainclua
+- **MG**: Anastasia, Pacheco, Moreira
 - **SP**: Alckmin, Bolsonaro
 
 ### Sistema de Fotos dos Políticos
@@ -76,13 +76,23 @@ Arquivos do protótipo PWA original (manter para referência):
 
 - Exibição do estado selecionado
 - Nome da família/clã político em destaque
-- Período de atividade
+- Badge do governador atual com partido e mandato
 - Lista de membros com fotos circulares
+- Período de atividade
 - Cargos ocupados
 - Âncoras do poder (TV, terra, tribunais, etc.)
+- Empresas relacionadas (lícitas e ilícitas) com tags de status
 - Curiosidades sobre o clã
 - Lista de outros clãs do mesmo estado (quando aplicável)
 - Interação para trocar entre clãs do mesmo estado
+
+### Empresas Relacionadas
+
+- Seção dinâmica que exibe empresas dos clãs políticos
+- Classificação por legalidade: Lícita, Investigada, Ilícita
+- Cards coloridos conforme status (verde/amarelo/vermelho)
+- Detalhes sobre faturamento estimado e relações familiares
+- Dados combinados do clã e do governador atual
 
 ### Legenda Dinâmica
 
@@ -137,7 +147,10 @@ Acesse `http://localhost:8000`.
       "cargos": ["Presidente da República", "Governador", ...],
       "ancoras_poder": ["Lei de Terras (1969)", "Sistema Mirante (TV/Rádio)", ...],
       "curiosidades": "José Ribamar mudou o nome no cartório em 1965...",
-      "cor_hex": "#E41A1C"
+      "cor_hex": "#E41A1C",
+      "empresas_relacionadas": [
+        { "nome": "Empresa X", "tipo": "Mídia", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "...", "faturamento_anual": "R$ X milhões" }
+      ]
     }
   ]
 }
