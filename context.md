@@ -1,166 +1,67 @@
-# Contexto do Projeto MapaDoPoder
+# MapaDoPoder - Context
 
-## Visão geral
+## Visão Geral
 
-Este projeto é um infográfico interativo sobre clãs políticos brasileiros. A ideia central é usar HTML/CSS/JavaScript com D3.js e GeoJSON para criar um mapa do Brasil onde cada estado mostra as principais famílias políticas e suas informações regionais.
+Infográfico interativo sobre clãs políticos brasileiros. Mapa do Brasil com D3.js e GeoJSON onde cada estado mostra famílias políticas, governadores atuais, empresas relacionadas e escândalos.
 
-## Estrutura atual do projeto
+## Estrutura do Projeto
 
-- `index.html` – página principal com mapa interativo
-- `css/styles.css` – estilos modernos para o mapa, painel lateral, legenda, fotos e layout responsivo
-- `js/data.js` – loader do JSON de famílias políticas com suporte a múltiplos clãs por estado
-- `js/map.js` – lógica para carregar o GeoJSON e desenhar o mapa do Brasil com D3.js
-- `js/ui.js` – interações do usuário, painel de detalhes, legenda dinâmica, suporte a múltiplos clãs e renderização de fotos
-- `js/imageService.js` – serviço para buscar fotos dos políticos via Wikipedia API
-- `data/br_states.geojson` – GeoJSON dos estados do Brasil para renderizar o mapa
-- `data/familias.json` – dados completos das famílias políticas (clãs de todos os 27 estados)
-- `data/photos/` – diretório com fotos dos políticos (quando disponíveis)
-- `.github/workflows/deploy.yml` – workflow do GitHub Actions para deploy automático no GitHub Pages
-- `README.md` – documenta a estrutura, como rodar localmente e como publicar no GitHub Pages
-- `transcricao_clas_poder_brasil.md` – transcrição completa do vídeo sobre clãs do poder no Brasil
-- `escrita.md` – guia de estilo de escrita acadêmica (padrão APA 7ª edição) para o conteúdo textual
+- `index.html` – página principal com mapa e painel lateral
+- `css/styles.css` – estilos modernos, layout responsivo
+- `js/data.js` – loader do JSON de famílias políticas
+- `js/map.js` – mapa D3.js com projeção Mercator
+- `js/ui.js` – interações, painel de detalhes, renderização
+- `data/br_states.geojson` – GeoJSON dos estados do Brasil
+- `data/familias.json` – dados de famílias políticas (27 estados + DF)
 
-Arquivos do protótipo PWA original (manter para referência):
+## Funcionalidades
 
-- `app.js`, `manifest.json`, `service-worker.js`, `data/clans.json`, `data/states.json`
+### Mapa
+- Estados coloridos por partido do governador (esquerda/centro/direita)
+- Hover com sombra e stroke mais grosso
+- Clique abre painel de detalhes
+- Labels com siglas dos estados
 
-## O que já foi feito
-
-### Mapa Interativo com D3.js
-
-- Implementação completa do mapa do Brasil usando D3.js e GeoJSON
-- Projeção Mercator centralizada no Brasil
-- Labels dos estados com siglas
-- Efeitos de hover com sombra e stroke mais grosso
-- Clique para abrir painel de detalhes
-
-### Dados de Famílias Políticas (clãs por estado)
-
-- **MA**: Sarney, Rocha, Lobão
-- **AL**: Collor de Mello, Calheiros, Lira
-- **PB**: Cunha Lima, Mota/Vanderley
-- **PA**: Barbalho, Lobão
-- **BA**: Magalhães (Carlismo)
-- **GO**: Caiado
-- **RJ**: Bolsonaro, Garotinho, Paes
-- **AP**: Alcolumbre
-- **RR**: Jucá
-- **SE**: Franco
-- **CE**: Jereissati
-- **PR**: Ratinho (Massa)
-- **TO**: Siqueira Campos
-- **RN**: Maia, Alves, Rosado
-- **PE**: Coelho
-- **PI**: Portela, Nogueira, Dias
-- **RS**: Paim, Vargas
-- **SC**: Amin
-- **MS**: Azambuja/Riedel, Tebet, Trad, Puccinelli
-- **MT**: Campos, Mendes
-- **RO**: Raupp, Cassol
-- **AC**: Viana, Marina Silva
-- **AM**: Amazonino, Virgílio, Omar
-- **DF**: Roriz
-- **ES**: Max
-- **MG**: Anastasia, Pacheco, Moreira
-- **SP**: Alckmin, Bolsonaro
-
-### Sistema de Fotos dos Políticos
-
-- Implementação do `imageService.js` que busca fotos via Wikipedia API
-- Fallback para avatar genérico quando foto não disponível
-- Exibição de fotos circulares no painel lateral
-- Fotos hospedadas localmente em `data/photos/` quando baixadas
-- Nomes dos membros rotulados abaixo das fotos
+### Cores por Partido
+- **Esquerda (vermelho #c41230)**: PT, PSB, PSOL, PCdoB, PV, Rede
+- **Centro (laranja #e65c00)**: MDB, PSD, PP, PROS, Cidadania, PSDB
+- **Direita (azul #0055a4)**: PL, UNIÃO, REP, DEM, NOVO, PODE
 
 ### Painel Lateral
+- Governador atual (nome, partido, mandato) - no topo
+- Nome do clã selecionado
+- Período, membros, cargos, âncoras do poder
+- Empresas relacionadas (lícitas/investigadas/ilícitas)
+- Escândalos e casos notórios
+- Curiosidades
+- Lista de outros clãs do estado (clicável)
 
-- Exibição do estado selecionado
-- Nome da família/clã político em destaque
-- Badge do governador atual com partido e mandato
-- Lista de membros com fotos circulares
-- Período de atividade
-- Cargos ocupados
-- Âncoras do poder (TV, terra, tribunais, etc.)
-- Empresas relacionadas (lícitas e ilícitas) com tags de status
-- Curiosidades sobre o clã
-- Lista de outros clãs do mesmo estado (quando aplicável)
-- Interação para trocar entre clãs do mesmo estado
+### Dados (familias.json)
+```json
+{
+  "governadores_atuais": [{ uf, nome, partido, mandato, empresas_relacionadas }],
+  "familias": [{
+    "uf": "MA", "estado": "Maranhão", "familia": "Sarney",
+    "periodo": "1965–presente", "destaque": true,
+    "membros": ["José Sarney", "Roseana Sarney"],
+    "cargos": ["Presidente da República", "Governador"],
+    "ancoras_poder": ["Sistema Mirante (TV/Rádio)"],
+    "curiosidades": "...",
+    "cor_hex": "#E41A1C",
+    "empresas_relacionadas": [{
+      "nome": "Empresa X", "tipo": "Mídia", "relacao": "...",
+      "legalidade": "Lícita", "detalhes": "...", "escandalos": ["..."]
+    }]
+  }]
+}
+```
 
-### Empresas Relacionadas
+## Deploy
 
-- Seção dinâmica que exibe empresas dos clãs políticos
-- Classificação por legalidade: Lícita, Investigada, Ilícita
-- Cards coloridos conforme status (verde/amarelo/vermelho)
-- Detalhes sobre faturamento estimado e relações familiares
-- Dados combinados do clã e do governador atual
+GitHub Actions: https://renato0503.github.io/MapaDoPoder
 
-### Legenda Dinâmica
-
-- Geração automática baseada nos dados
-- Exibe apenas clãs em destaque
-- Cores correspondentes a cada família
-- Sigla do estado entre parênteses
-
-### Estilos CSS
-
-- Design moderno com gradientes
-- Layout responsivo (grid que muda para coluna única em mobile)
-- Animações de transição suaves
-- Cards com bordas arredondadas e sombras sutis
-- Tags para âncoras do poder
-- Área para curiosidades em itálico
-- Botão de fechar painel
-- Estilos para galeria de fotos (`family-photos`, `photo-item`)
-
-### Deploy Automático
-
-- GitHub Actions configurado para deploy automático no GitHub Pages
-- Acessível em: https://renato0503.github.io/MapaDoPoder
-
-## Deploy no GitHub Pages
-
-O deploy é automático via GitHub Actions. A cada push para `master`, o site é publicado em:
-https://renato0503.github.io/MapaDoPoder
-
-## Como rodar localmente
+## Rodar Localmente
 
 ```powershell
 python -m http.server 8000
 ```
-
-Acesse `http://localhost:8000`.
-
-## Estrutura dos dados (familias.json)
-
-```json
-{
-  "meta": { titulo, fonte, atualizado_em, nota },
-  "config": { cor_padrao, cor_hover, tooltip_max_width, animacao_transicao_ms },
-  "familias": [
-    {
-      "uf": "MA",
-      "estado": "Maranhão",
-      "familia": "Sarney",
-      "periodo": "1965–presente",
-      "destaque": true,
-      "membros": ["José Sarney", "Roseana Sarney", ...],
-      "cargos": ["Presidente da República", "Governador", ...],
-      "ancoras_poder": ["Lei de Terras (1969)", "Sistema Mirante (TV/Rádio)", ...],
-      "curiosidades": "José Ribamar mudou o nome no cartório em 1965...",
-      "cor_hex": "#E41A1C",
-      "empresas_relacionadas": [
-        { "nome": "Empresa X", "tipo": "Mídia", "relacao": "Propriedade familiar", "legalidade": "Lícita", "detalhes": "...", "faturamento_anual": "R$ X milhões" }
-      ]
-    }
-  ]
-}
-```
-
-## Observações
-
-- O campo `destaque` indica qual clã tem maior influência atual no estado
-- Um estado pode ter múltiplos clãs (ex: AL tem Collor, Calheiros e Lira)
-- Quando há múltiplos clãs, o painel permite alternar entre eles
-- Cores são únicas por clã para facilitar identificação visual no mapa
-- Fotos são buscadas via Wikipedia API ou usam fallback SVG quando não disponíveis
-- O arquivo `escrita.md` contém o padrão de escrita acadêmica a ser seguido para textos descritivos
