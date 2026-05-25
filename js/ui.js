@@ -69,7 +69,8 @@ function renderGovernadorInfo(governador) {
   
   container.innerHTML = `
     <div class="governador-badge">
-      <span class="governador-nome">👤 ${governador.nome}</span>
+      <span class="governador-label">🏛️ Governador Atual</span>
+      <span class="governador-nome">${governador.nome}</span>
       <span class="governador-partido">${governador.partido} | ${governador.mandato}</span>
     </div>
   `;
@@ -138,8 +139,12 @@ function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
   familiaCuriosidades.textContent = destaque.curiosidades;
   
   renderFamilyPhotos(destaque.membros, destaque.familia);
-  renderGovernadorInfo(gobernador);
-  renderEmpresas(destaque.empresas_relacionadas || []);
+  renderGovernadorInfo(governador);
+  const allEmpresas = [
+    ...(destaque.empresas_relacionadas || []),
+    ...(gobernador?.empresas_relacionadas || [])
+  ];
+  renderEmpresas(allEmpresas);
   
   if (grupos.length > 1) {
     clansList.innerHTML = '<h4>Outros clãs neste estado:</h4>' + 
@@ -163,7 +168,11 @@ function atualizarPainel({ uf, nomeEstado, grupos, gobernador }) {
           familiaAncoras.innerHTML = selectedClan.ancoras_poder.map(a => `<span class="anchor-tag">${a}</span>`).join('');
           familiaCuriosidades.textContent = selectedClan.curiosidades;
           renderFamilyPhotos(selectedClan.membros, selectedClan.familia);
-          renderEmpresas(selectedClan.empresas_relacionadas || []);
+          const clanEmpresas = [
+            ...(selectedClan.empresas_relacionadas || []),
+            ...(governador?.empresas_relacionadas || [])
+          ];
+          renderEmpresas(clanEmpresas);
         }
       });
     });

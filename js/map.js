@@ -1,5 +1,35 @@
 import { loadFamiliasData, getClansMap, getGovernadoresMap, getConfig } from './data.js';
 
+const partyColors = {
+  'PP': '#f97316',
+  'MDB': '#006647',
+  'UNIÃO': '#a1111d',
+  'PSB': '#ed1414',
+  'PT': '#c41230',
+  'PSD': '#f6b026',
+  'PL': '#00a859',
+  'PSDB': '#0085c8',
+  'NOVO': '#f5b71c',
+  'REP': '#cb0d0d',
+  'Cidadania': '#77b3e4',
+  'Republicanos': '#6ebaf8',
+  'DEM': '#2e7eb9',
+  'PV': '#009a44',
+  'Rede': '#008b9a',
+  'Solidariedade': '#26c9ff',
+  'Avante': '#3d7eaa',
+  'PODE': '#d0d000',
+  'Patriota': '#1f8f2d',
+  'PMN': '#edd400',
+  'PROS': '#0066a2',
+  'PSL': '#1f4962',
+  'DC': '#7ab8e5'
+};
+
+function getPartyColor(partido) {
+  return partyColors[partido] || '#1a1a2e';
+}
+
 export async function initBrazilMap() {
   const [geoResponse, familiasData] = await Promise.all([
     fetch('data/br_states.geojson').then(r => r.json()),
@@ -105,14 +135,21 @@ function renderGovernadorMarkers(svg, geoData, governadoresMap, path) {
       });
     
     marker.append('circle')
-      .attr('r', 12)
+      .attr('r', 10)
       .attr('cx', 0)
-      .attr('cy', 0);
+      .attr('cy', 0)
+      .attr('fill', getPartyColor(gov.partido))
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 1.5);
     
     marker.append('text')
       .attr('x', 0)
-      .attr('y', 3)
-      .text(gov.partido.substring(0, 3));
+      .attr('y', 4)
+      .text(gov.partido.substring(0, 3))
+      .attr('fill', '#fff')
+      .attr('font-size', '8px')
+      .attr('font-weight', '700')
+      .attr('text-anchor', 'middle');
     
     marker.append('title')
       .text(`Gov ${gov.nome} (${gov.partido})`);
